@@ -1,0 +1,106 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const ctx = document.getElementById('exerciseChart').getContext('2d');
+  
+    // 데이터 정의
+    const chartData = {
+      all: [60, 180, 90, 45, 75, 30, 60], // 전체 데이터
+      upper: [20, 40, 30, 15, 25, 10, 20], // 상체 데이터
+      lower: [15, 30, 25, 10, 20, 8, 15],  // 하체 데이터
+      core: [10, 20, 15, 8, 12, 5, 10],    // 코어 데이터
+      stretch: [15, 30, 20, 12, 18, 7, 15] // 스트레칭 데이터
+    };
+  
+    const daysOfWeek = ['월', '화', '수', '목', '금', '토', '일']; // 요일 배열
+  
+    // 차트 초기화
+    const exerciseChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['12/21', '12/22', '12/23', '12/24', '12/25', '12/26', '12/27'], // 날짜 라벨
+        datasets: [
+          {
+            label: '전체',
+            data: chartData.all,
+            backgroundColor: 'rgba(0, 0, 0, 1)', // 검은색 (전체 데이터)
+            borderColor: 'rgba(0, 0, 0, 1)',
+            borderWidth: 1,
+            barThickness: 15, // 막대 두께 고정
+            maxBarThickness: 15 // 최대 두께 고정
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, // 비율 고정 해제
+        layout: {
+          padding: {
+            top: 40 // 차트 상단 여백 추가
+          }
+        },
+        plugins: {
+          legend: {
+            display: false // 범례 숨기기
+          }
+        },
+        scales: {
+          x: {
+            stacked: true, // X축 스택 활성화
+            grid: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: '날짜',
+              color: '#666',
+              font: {
+                size: 12
+              }
+            }
+          },
+          y: {
+            stacked: true, // Y축 스택 활성화
+            position: 'right', // Y축 오른쪽으로 이동
+            ticks: {
+              stepSize: 60, // 1시간 단위
+              callback: (value) => `${value / 60}h`, // 시간 형식으로 변환
+              color: '#666',
+              font: {
+                size: 12
+              }
+            },
+            grid: {
+              color: 'rgba(0, 0, 0, 0.2)', // 점선 색상
+              borderDash: [1, 1],
+              lineWidth: 1
+            }
+          }
+        },
+        plugins: [
+            {
+              id: 'weekdayAboveBars',
+              afterDatasetsDraw(chart) {
+                const { ctx, scales } = chart;
+                const daysOfWeek = ['월', '화', '수', '목', '금', '토', '일']; // 요일 배열
+      
+                ctx.save();
+                ctx.fillStyle = '#000'; // 텍스트 색상
+                ctx.font = '14px Arial'; // 텍스트 스타일
+                ctx.textAlign = 'center'; // 중앙 정렬
+      
+                // 각 막대 위에 요일 표시
+                chart.data.labels.forEach((label, index) => {
+                  const xPosition = scales.x.getPixelForValue(index); // X축 위치
+                  const yPosition = scales.y.top - 30; // 차트 상단에 표시
+      
+                  // 요일 텍스트 렌더링
+                  ctx.fillText(daysOfWeek[index], xPosition, yPosition);
+                });
+      
+                ctx.restore();
+              }
+            }
+          ]
+      }
+    });
+  });
+  

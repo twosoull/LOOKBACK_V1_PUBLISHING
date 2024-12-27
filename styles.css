@@ -1,0 +1,212 @@
+/* 공통 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fff; /* 흰색 배경 */
+  color: #333; /* 기본 텍스트 색상 */
+}
+
+/* 전체 컨테이너에 좌우 여백 추가 */
+.container {
+  padding: 20px; /* 좌우 여백 통일 */
+}
+
+.header {
+  background-color: #fff; /* 흰색 바탕 */
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.category-nav {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 1rem; /* 버튼 간격 */
+  background-color: #fff; /* 흰색 바탕 */
+  border-bottom: 1px solid #ddd; /* 하단 경계선 추가 */
+  padding: 0.5rem 0;
+}
+
+.category-btn {
+  border: none;
+  background: none;
+  padding: 0px 16.71px 0px 0px;
+  color: #888; /* 기본 색상 회색 */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out; /* 부드러운 색상 전환 */
+}
+
+.category-btn.active,
+.category-btn:hover {
+  color: #000; /* 클릭 또는 호버 시 검은색 */
+  font-weight: bold;
+}
+
+
+.stats {
+  padding: 1rem 0;
+  background-color: #fff; /* 흰색 바탕 */
+}
+
+.stats h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+#exerciseChart {
+  max-width: 100%;
+  height: 300px;
+}
+
+.exercise-list {
+  padding: 1rem 0;
+  background-color: #fff; /* 흰색 바탕 */
+}
+
+.exercise-list h2 {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+}
+
+.exercise-item {
+  background-color: #fff; /* 흰색 바탕 */
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+}
+
+.add-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 50px;
+  height: 50px;
+  background-color: #000; /* 검은색 버튼 */
+  color: #fff; /* 흰색 텍스트 */
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #444;
+}
+
+/* "이번 주" 텍스트 스타일 조정 */
+.stats-header {
+  display: flex;
+  justify-content: space-between; /* 왼쪽: "이번 주", 오른쪽: 버튼들 */
+  align-items: center; /* 수직 정렬 */
+  margin-bottom: 1rem;
+}
+
+.stats-header h2 {
+  font-size: 0.9rem; /* 작은 크기로 변경 */
+  margin: 0; /* 여백 제거 */
+}
+
+/* 상단 버튼 컨테이너 */
+.stats-buttons {
+  display: flex;
+  gap: 0.8rem; /* 버튼 간격 */
+  align-items: center;
+}
+
+/* 1번: 커스텀 셀렉트 버튼 */
+.custom-select {
+  position: relative;
+}
+
+.select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* 흰 바탕 */
+  border: 1px solid #ddd; /* 회색 테두리 */
+  border-radius: 12px; /* 약간 둥근 네모 박스 */
+  padding: 0.3rem 0.8rem; /* 크기 축소 */
+  cursor: pointer;
+  font-size: 0.8rem; /* 텍스트 크기 축소 */
+  color: #333; /* 기본 글씨 색상 */
+}
+
+.select-options {
+  display: none; /* 기본 숨김 */
+  position: absolute;
+  top: 100%; /* 버튼 아래에 위치 */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.select-options li {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.select-options li:hover {
+  background-color: #f0f0f0;
+}
+
+/* 스위치 버튼 */
+.switch-btn {
+  display: flex;
+  border: 1px solid #ddd; /* 회색 테두리 */
+  border-radius: 12px; /* 둥근 테두리 */
+  overflow: hidden; /* 둥근 효과 유지 */
+  background-color: #fff; /* 기본 배경 */
+  width: 50px; /* 크기를 맞추기 위해 자동 크기 */
+  padding: 0; /* 버튼 내부 여백 제거 */
+  height: 100%; /* 전체 버튼과 높이 동일화 */
+}
+
+.switch-option {
+  flex: 1; /* 두 버튼 크기 균등 분할 */
+  padding: 0.3rem 0.1rem; /* 버튼 내부 여백 */
+  font-size: 0.8rem; /* 텍스트 크기 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  cursor: pointer;
+  color: #333; /* 기본 텍스트 색상 */
+  background-color: #fff; /* 기본 투명 배경 */
+  border:none;
+  transition: background-color 0.2s, color 0.2s; /* 부드러운 전환 효과 */
+}
+
+.switch-option.active {
+  background-color: #000; /* 선택된 버튼 배경 검은색 */
+  color: #fff; /* 선택된 버튼 텍스트 흰색 */
+}
+
+
+#chartContainer {
+  width: 100%;
+  height: 100%;
+  max-height: 600px; /* 태블릿에서도 크기 제한 */
+  margin: 0 auto; /* 중앙 정렬 */
+  position: relative; /* 위치 고정 */
+}
+
+#exerciseChart {
+  width: 100%;
+  height: 100%;
+}

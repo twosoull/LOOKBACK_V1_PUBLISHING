@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 기록 어플</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- 전체 컨테이너 -->
+  <div class="container">
+    <!-- 상단 타이틀 -->
+    <header class="header">
+      <h1 class="title">기록</h1>
+    </header>
+
+    <!-- 카테고리 메뉴 -->
+    <nav class="category-nav">
+      <button class="category-btn active">운동기록 홈</button>
+      <button class="category-btn">운동정보/통계</button>
+      <button class="category-btn">루틴</button>
+    </nav>
+
+    <section class="stats">
+      <div class="stats-header">
+        <h2>이번 주</h2>
+        <div class="stats-buttons">
+          <!-- 1번: 셀렉트 버튼 -->
+          <div class="custom-select">
+            <button class="select-btn"><span>전체</span></button>
+            <ul class="select-options">
+              <li data-category="all">전체</li>
+              <li data-category="upper">상체</li>
+              <li data-category="lower">하체</li>
+              <li data-category="core">코어</li>
+              <li data-category="stretch">스트레칭</li>
+            </ul>
+          </div>
+          
+
+          <!-- 2번: 스위치 버튼 -->
+          <div class="switch-btn">
+            <button class="switch-option active">주</button>
+            <button class="switch-option">일</button>
+          </div>
+        </div>
+      </div>
+      <div id="chartContainer">
+        <canvas id="exerciseChart"></canvas>
+      </div>
+    </section>
+
+    <!-- 이번 주 운동 목록 -->
+    <section class="exercise-list">
+        <h2>이번 주</h2>
+      
+        <div class="exercise-item">
+          <div class="exercise-image">
+            <!-- 간단한 아이콘(대체 이미지) -->
+            <img src="https://via.placeholder.com/50" alt="운동 아이콘">
+          </div>
+          <div class="exercise-details">
+            <div class="exercise-datetime">
+              10월 12일(토) 오후 7:00~8:20
+            </div>
+            <div class="exercise-info">
+              근력, 유산소, 스트레칭 <br>
+              가슴, 어깨, 팔, 복부
+            </div>
+          </div>
+        </div>
+      
+        <!-- 추가 운동 항목 -->
+        <div class="exercise-item">
+          <div class="exercise-image">
+            <img src="https://via.placeholder.com/50" alt="운동 아이콘">
+          </div>
+          <div class="exercise-details">
+            <div class="exercise-datetime">
+              10월 13일(일) 오전 9:00~10:15
+            </div>
+            <div class="exercise-info">
+              유산소, 스트레칭 <br>
+              다리, 복부
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  </div>
+
+  <!-- 추가 버튼 -->
+  <button class="add-btn">+</button>
+  <script src="common.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>
