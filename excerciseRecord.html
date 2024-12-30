@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>운동 기록 어플</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -28,9 +29,19 @@
         <div class="stats-buttons">
           <!-- 1번: 셀렉트 버튼 -->
           <div class="custom-select">
-            <button class="select-btn"><span>전체</span></button>
+            <button class="select-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="control-icon" d="M14.1667 5L14.1667 15" stroke="black" stroke-linecap="round"/>
+                <path class="control-icon" d="M10 5L10 15" stroke="black" stroke-linecap="round"/>
+                <path class="control-icon" d="M5.83333 5L5.83333 15" stroke="black" stroke-linecap="round"/>
+                <path class="control-icon" d="M4.16666 6.66667H7.5" stroke="black" stroke-linecap="round"/>
+                <path class="control-icon" d="M8.33334 13.3333H11.6667" stroke="black" stroke-linecap="round"/>
+                <path class="control-icon" d="M12.5 10H15.8333" stroke="black" stroke-linecap="round"/>
+              </svg>                
+              <span>전체</span>
+            </button>
             <ul class="select-options">
-              <li data-category="all">전체</li>
+              <li data-category="all"> 전체</li>
               <li data-category="upper">상체</li>
               <li data-category="lower">하체</li>
               <li data-category="core">코어</li>
@@ -42,12 +53,30 @@
           <!-- 2번: 스위치 버튼 -->
           <div class="switch-btn">
             <button class="switch-option active">주</button>
-            <button class="switch-option">일</button>
+            <button class="switch-option">월</button>
           </div>
         </div>
       </div>
+      <!-- 차트 -->
       <div id="chartContainer">
         <canvas id="exerciseChart"></canvas>
+      </div>
+            <!-- 달력 -->
+      <div id="calendarContainer"></div>
+      <!-- 달력 하단에 카테고리 설명 추가 -->
+      <div id="calendarLegend">
+        <div class="legend-item">
+          <span class="dot upper"></span> 상체
+        </div>
+        <div class="legend-item">
+          <span class="dot lower"></span> 하체
+        </div>
+        <div class="legend-item">
+          <span class="dot core"></span> 코어
+        </div>
+        <div class="legend-item">
+          <span class="dot stretch"></span> 스트레칭
+        </div>
       </div>
     </section>
 
@@ -61,12 +90,14 @@
             <img src="https://via.placeholder.com/50" alt="운동 아이콘">
           </div>
           <div class="exercise-details">
-            <div class="exercise-datetime">
-              10월 12일(토) 오후 7:00~8:20
+            <div class="exercise-details-box">
+              <div class="exercise-datetime">
+                10월 12일(토)
+              </div>
+              <div class="exercise-datetime2">오후 7:00~8:20</div>
             </div>
             <div class="exercise-info">
-              근력, 유산소, 스트레칭 <br>
-              가슴, 어깨, 팔, 복부
+              근력, 유산소, 스트레칭 | 가슴, 어깨, 팔, 복부
             </div>
           </div>
         </div>
@@ -77,12 +108,53 @@
             <img src="https://via.placeholder.com/50" alt="운동 아이콘">
           </div>
           <div class="exercise-details">
-            <div class="exercise-datetime">
-              10월 13일(일) 오전 9:00~10:15
+            <div class="exercise-details-box">
+              <div class="exercise-datetime">
+                10월 12일(토)
+              </div>
+              <div class="exercise-datetime2">오후 7:00~8:20</div>
             </div>
             <div class="exercise-info">
-              유산소, 스트레칭 <br>
-              다리, 복부
+              유산소, 스트레칭 | 다리, 복부
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="exercise-list">
+        <h2>9/29 - 10/5</h2>
+      
+        <div class="exercise-item">
+          <div class="exercise-image">
+            <!-- 간단한 아이콘(대체 이미지) -->
+            <img src="https://via.placeholder.com/50" alt="운동 아이콘">
+          </div>
+          <div class="exercise-details">
+            <div class="exercise-details-box">
+              <div class="exercise-datetime">
+                10월 12일(토)
+              </div>
+              <div class="exercise-datetime2">오후 7:00~8:20</div>
+            </div>
+            <div class="exercise-info">
+              근력, 유산소, 스트레칭 | 가슴, 어깨, 팔, 복부
+            </div>
+          </div>
+        </div>
+      
+        <!-- 추가 운동 항목 -->
+        <div class="exercise-item">
+          <div class="exercise-image">
+            <img src="https://via.placeholder.com/50" alt="운동 아이콘">
+          </div>
+          <div class="exercise-details">
+            <div class="exercise-details-box">
+              <div class="exercise-datetime">
+                10월 12일(토)
+              </div>
+              <div class="exercise-datetime2">오후 7:00~8:20</div>
+            </div>
+            <div class="exercise-info">
+              유산소, 스트레칭 | 다리, 복부
             </div>
           </div>
         </div>
@@ -92,7 +164,19 @@
 
   <!-- 추가 버튼 -->
   <button class="add-btn">+</button>
+  <!-- 액션 메뉴 -->
+  <div id="actionMenu" class="hidden">
+    <ul class="menu-list">
+      <li class="menu-item">운동 선택하기</li>
+      <li class="menu-item">루틴 불러오기</li>
+      <li class="menu-item">최근 기록 불러오기</li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
   <script src="common.js"></script>
   <script src="chart.js"></script>
+  <script src="fab.js"></script>
+  
 </body>
 </html>

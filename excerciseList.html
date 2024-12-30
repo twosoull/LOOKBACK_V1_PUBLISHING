@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 선택 메뉴</title>
+  <link rel="stylesheet" href="excerciseList.css">
+</head>
+<body>
+  <div class="exercise-selection-menu">
+    <!-- 상단 검색창 -->
+    <div class="menu-header">
+      <button class="back-btn">&lt;</button>
+      <input type="text" class="search-input" placeholder="운동명 검색 / 직접 입력" />
+      <button class="search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="black">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.56l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 카테고리 메뉴 -->
+    <nav class="category-nav">
+      <button class="category-btn active">근력</button>
+      <button class="category-btn">유산소</button>
+      <button class="category-btn">스트레칭</button>
+    </nav>
+
+    <!-- 세부 카테고리 -->
+    <div class="sub-categories">
+      <!-- 장비 -->
+      <div class="sub-category">
+        <h3>장비</h3>
+        <div class="button-group">
+          <button class="sub-category-btn active">전체</button>
+          <button class="sub-category-btn">머신</button>
+          <button class="sub-category-btn">바벨</button>
+          <button class="sub-category-btn">덤벨</button>
+          <button class="sub-category-btn">케틀벨</button>
+          <button class="sub-category-btn">맨몸</button>
+          <button class="sub-category-btn">밴드</button>
+        </div>
+      </div>
+      <!-- 부위 -->
+      <div class="sub-category">
+        <h3>부위</h3>
+        <div class="button-group">
+          <button class="sub-category-btn active">전체</button>
+          <button class="sub-category-btn">승모</button>
+          <button class="sub-category-btn">어깨</button>
+          <button class="sub-category-btn">가슴</button>
+          <button class="sub-category-btn">등</button>
+          <button class="sub-category-btn">팔</button>
+        </div>
+      </div>
+      <!-- 근육 -->
+      <div class="sub-category">
+        <h3>근육</h3>
+        <div class="button-group">
+          <button class="sub-category-btn active">전체</button>
+          <button class="sub-category-btn">삼두근</button>
+          <button class="sub-category-btn">이두근</button>
+          <button class="sub-category-btn">전완근</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

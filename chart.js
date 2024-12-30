@@ -127,5 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       return colors[category] ? colors[category][isBorder ? 1 : 0] : 'rgba(0, 0, 0, 0.7)';
     };
+
   });
   
