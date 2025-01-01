@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>운동 선택 메뉴</title>
-  <link rel="stylesheet" href="excerciseList.css">
+  <title>운동 기록 어플</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="exercise-selection-menu">
-    <!-- 상단 검색창 -->
-    <div class="menu-header">
-      <button class="back-btn">&lt;</button>
-      <input type="text" class="search-input" placeholder="운동명 검색 / 직접 입력" />
-      <button class="search-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="black">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.56l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
-        </svg>
-      </button>
-    </div>
+  <!-- 전체 컨테이너 -->
+  <div class="container">
+    <!-- 상단 타이틀 (검색창 포함) -->
+    <header class="header">
+      <div class="search-header">
+        <div class="back-btn-box">
+          <button class="back-btn">&lt;</button>
+        </div>
+        <div class="search-container">
+          <input 
+            type="text" 
+            class="search-input" 
+            placeholder="운동명 검색 / 직접 입력"
+          />
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.56l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
 
     <!-- 카테고리 메뉴 -->
     <nav class="category-nav">
@@ -26,45 +39,154 @@
       <button class="category-btn">유산소</button>
       <button class="category-btn">스트레칭</button>
     </nav>
-
-    <!-- 세부 카테고리 -->
-    <div class="sub-categories">
+      
+    <div class="search-filters">
       <!-- 장비 -->
-      <div class="sub-category">
-        <h3>장비</h3>
-        <div class="button-group">
-          <button class="sub-category-btn active">전체</button>
-          <button class="sub-category-btn">머신</button>
-          <button class="sub-category-btn">바벨</button>
-          <button class="sub-category-btn">덤벨</button>
-          <button class="sub-category-btn">케틀벨</button>
-          <button class="sub-category-btn">맨몸</button>
-          <button class="sub-category-btn">밴드</button>
+      <div class="filter-group">
+        <h3 class="filter-title">장비</h3>
+        <div class="filter-buttons scrollable">
+          <button class="filter-btn active">전체</button>
+          <button class="filter-btn">머신</button>
+          <button class="filter-btn">바벨</button>
+          <button class="filter-btn">덤벨</button>
+          <button class="filter-btn">케틀벨</button>
+          <button class="filter-btn">맨몸</button>
+          <button class="filter-btn">밴드</button>
         </div>
       </div>
+    
       <!-- 부위 -->
-      <div class="sub-category">
-        <h3>부위</h3>
-        <div class="button-group">
-          <button class="sub-category-btn active">전체</button>
-          <button class="sub-category-btn">승모</button>
-          <button class="sub-category-btn">어깨</button>
-          <button class="sub-category-btn">가슴</button>
-          <button class="sub-category-btn">등</button>
-          <button class="sub-category-btn">팔</button>
+      <div class="filter-group">
+        <h3 class="filter-title">부위</h3>
+        <div class="filter-buttons scrollable">
+          <button class="filter-btn active">전체</button>
+          <button class="filter-btn">승모</button>
+          <button class="filter-btn">어깨</button>
+          <button class="filter-btn">가슴</button>
+          <button class="filter-btn">등</button>
+          <button class="filter-btn">팔</button>
+          <button class="filter-btn">허리</button>
+          <button class="filter-btn">복근</button>
         </div>
       </div>
+    
       <!-- 근육 -->
-      <div class="sub-category">
-        <h3>근육</h3>
-        <div class="button-group">
-          <button class="sub-category-btn active">전체</button>
-          <button class="sub-category-btn">삼두근</button>
-          <button class="sub-category-btn">이두근</button>
-          <button class="sub-category-btn">전완근</button>
+      <div class="filter-group">
+        <h3 class="filter-title">근육</h3>
+        <div class="filter-buttons scrollable">
+          <button class="filter-btn active">전체</button>
+          <button class="filter-btn">삼두근</button>
+          <button class="filter-btn">이두근</button>
+          <button class="filter-btn">전완근</button>
         </div>
       </div>
     </div>
+
+    <div class="content-header">
+      <!-- 왼쪽 버튼 그룹 -->
+      <div class="left-buttons">
+        <!-- 별 버튼 -->
+        <button class="star-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" class="star-icon">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        </button>
+
+        <!-- 최근, 자주 버튼 -->
+        <div class="filter-tabs">
+          <button class="filter-tab">최근</button>
+          <button class="filter-tab">자주</button>
+        </div>
+      </div>
+
+      <!-- 오른쪽 버튼 -->
+      <button class="sort-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" class="sort-icon">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M4 18h16v-2H4v2zM4 6v2h16V6H4zM4 12h10v-2H4v2z" />
+        </svg>
+        <span>
+          정렬
+        </span>
+      </button>
+    </div>
+    <!-- 정렬 모달 -->
+    <div id="sortModal" class="sort-modal hidden">
+      <ul class="sort-options">
+        <li class="sort-option" data-value="recommend">추천순</li>
+        <li class="sort-option" data-value="newest">최신순</li>
+        <li class="sort-option" data-value="frequent">자주한순</li>
+        <li class="sort-option" data-value="alphabetical">가나다순</li>
+      </ul>
+    </div>
+    <div class="exercise-container">
+      <div class="exercise-item-container">
+        <!-- 별 버튼 -->
+        <button class="exercise-star-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" class="exercise-star-icon">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        </button>
+    
+        <!-- 운동 정보 -->
+        <div class="exercise-details-container">
+          <div class="exercise-info">
+            <div class="exercise-image">
+              <img src="https://via.placeholder.com/50" alt="운동 아이콘">
+            </div>
+            <div class="exercise-text">
+              <div class="exercise-title">바벨 스쿼트 ></div>
+              <div class="exercise-muscles">대퇴사두, 둔근, 햄스트링</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 선택 버튼 -->
+        <button class="exercise-select-btn">선택</button>
+      </div>
+      <div class="exercise-item-container">
+        <!-- 별 버튼 -->
+        <button class="exercise-star-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" class="exercise-star-icon">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        </button>
+    
+        <!-- 운동 정보 -->
+        <div class="exercise-details-container">
+          <div class="exercise-info">
+            <div class="exercise-image">
+              <img src="https://via.placeholder.com/50" alt="운동 아이콘">
+            </div>
+            <div class="exercise-text">
+              <div class="exercise-title">바벨 스쿼트 ></div>
+              <div class="exercise-muscles">대퇴사두, 둔근, 햄스트링</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 선택 버튼 -->
+        <button class="exercise-select-btn">선택</button>
+      </div>
+      <!-- 운동 콘텐츠 모달 -->
+<div id="exerciseModal" class="exercise-modal hidden">
+  <div class="modal-content">
+    <!-- 여기에 동적으로 추가될 선택된 운동 항목들 -->
+    <div class="modal-items-container"></div>
+    <!-- 저장하기 버튼 -->
+    <button class="save-btn">저장하기</button>
   </div>
+</div>
+    </div>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="common.js"></script>
+  <script src="button.js"></script>
+  <script src="excerciseList.js"></script>
+  
 </body>
 </html>
