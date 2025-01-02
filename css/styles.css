@@ -592,7 +592,7 @@ body {
 }
 
 .star-btn.active .star-icon {
-  fill: #000; /* 클릭 시 검은색 */
+  fill: #FFC107 /* 클릭 시 검은색 */
 }
 
 /* 최근, 자주 버튼 스타일 */
@@ -848,4 +848,357 @@ body {
   color: #000;
 }
 
+/* 컨테이너 */
+.exercise-detail-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
 
+/* 상단 날짜 */
+.detail-header h1 {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 네모 박스 스타일 */
+.summary-box {
+  background-color: #EAEAEA;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.summary-item {
+  flex: 1 1 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.summary-title {
+  font-size: 12px;
+  color: #000000;
+}
+
+.summary-value {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 5px;
+  color: #000000;
+}
+
+/* 운동 상세 기록 */
+.exercise-records {
+  margin-top: 20px;
+}
+
+.exercise-record {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.record-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.record-modal-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.record-sets {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.set {
+  font-size: 14px;
+  padding-top: 5px
+}
+
+.gray-text {
+  color: #757575;
+}
+
+/* 헤더 아이콘 스타일 */
+.header-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn svg {
+  fill: #666;
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s ease;
+}
+
+.icon-btn:hover svg {
+  fill: #000; /* 호버 시 검은색 */
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 30px;
+  padding: 0px 0px 0px 0px;
+}
+
+.detail-container {
+  display: flex;
+  flex: 1; /* 검색창이 남은 공간을 채우도록 */
+  align-items: center;
+  border-radius: 2px; /* 둥근 테두리 */
+  padding: 0px;
+}
+
+.detail-title{
+  font-size: 12px;
+  margin: 0px;
+}
+
+.exercise-records-title {
+  margin-bottom: 10px;
+}
+
+    /* 팝업 관련 스타일 */
+    .detail-popup {
+      position: fixed;
+      bottom: -100%; /* 화면 아래로 숨김 */
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+      transition: bottom 0.3s ease;
+      z-index: 1000;
+    }
+
+    .detail-popup.show {
+      bottom: 0; /* 화면 위로 표시 */
+    }
+
+    .detail-popup-content {
+      padding: 20px 20px 10px 20px;
+    }
+
+    .detail-popup-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .detail-popup-item:last-child {
+      border-bottom: none;
+    }
+
+    .detail-popup-item:hover {
+      background-color: #f9f9f9;
+    }
+
+    .detail-popup-title {
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .detail-popup-icon {
+      font-size: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* 삭제 확인 팝업 */
+.delete-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  display: none; /* 기본적으로 숨김 */
+}
+
+.delete-popup.show {
+  display: block; /* 팝업 표시 */
+}
+
+.delete-popup-content {
+  padding: 10px 0;
+}
+
+.delete-popup-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.delete-popup-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.delete-popup-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.delete-btn {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #d42f2f;
+}
+
+.excercise-title {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* 운동 정보 섹션 스타일 */
+.exercise-detail-info {
+  margin-top: 20px;
+}
+
+.exercise-section-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.exercise-description-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.exercise-method {
+  margin-top: 20px;
+}
+
+.exercise-steps {
+  list-style-type: disc; /* 번호 대신 점 */
+  padding-left: 20px; /* 왼쪽 여백 */
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.exercise-steps li {
+  margin-bottom: 10px;
+}
+
+/* 관련 영상 섹션 스타일 */
+.related-videos {
+  margin-top: 20px;
+}
+
+.video-slider-container {
+  overflow-x: auto; /* 가로 스크롤 허용 */
+  display: flex;
+  padding: 10px 0;
+}
+
+.video-slider {
+  display: flex;
+  gap: 20px; /* 각 썸네일 간격 */
+  flex-wrap: nowrap; /* 슬라이드 형태 유지 */
+}
+
+.video-item {
+  text-align: center;
+  min-width: 150px; /* 고정된 너비로 설정 */
+}
+
+.video-thumbnail {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.video-title {
+  font-size: 14px;
+  color: #333;
+  margin-top: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.excercise-title h2,
+.excercise-title .star-icon{
+  margin: 0px;
+}

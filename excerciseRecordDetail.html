@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 상세 기록</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="exercise-detail-container">
+    <!-- 상단 날짜 -->
+    <!-- 상단 타이틀 (검색창 포함) -->
+    <header class="header">
+        <div class="detail-header">
+          <div class="back-btn-box">
+            <button class="back-btn">&lt;</button>
+          </div>
+          <div class="detail-container">
+            <!-- 헤더 오른쪽 아이콘들 -->
+            <div class="header-right">
+              <button class="icon-btn share-btn" aria-label="공유">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path d="M15 5c-1.66 0-3 1.34-3 3 0 .23.03.45.08.67l-4.1 2.43C7.68 10.28 7.36 10 7 10c-1.66 0-3 1.34-3 3s1.34 3 3 3c.36 0 .68-.1.98-.27l4.14 2.46c-.03.12-.05.25-.05.38 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3c-.36 0-.68.1-.98.27L9.87 11.8c.03-.12.05-.25.05-.38 0-.13-.02-.26-.05-.38l4.11-2.44c.3.17.62.27.98.27 1.66 0 3-1.34 3-3s-1.34-3-3-3zM7 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm8 5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm0-10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
+                </svg>
+              </button>
+              <button id="more-btn" class="icon-btn more-btn" aria-label="더 보기">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <circle cx="5" cy="12" r="1.5" />
+                  <circle cx="12" cy="12" r="1.5" />
+                  <circle cx="19" cy="12" r="1.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <!-- 첫 번째 네모박스 -->
+    <div>
+        <h3 class="detail-title">10월 12일(토) 운동기록</h3>
+        <section>
+            <div class="summary-box">
+                <div class="summary-item">
+                    <span class="summary-title">운동시간</span>
+                    <span class="summary-value">80분</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-title">소모칼로리</span>
+                    <span class="summary-value">440kcal</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-title">운동종류</span>
+                    <span class="summary-value">5가지</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-title">운동유형</span>
+                    <span class="summary-value">근력, 유산소</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 두 번째 네모박스 -->
+    <section class="summary-box" style="display: block;">
+      <div class="summary-item">
+        <span class="summary-title">운동부위</span>
+        <span class="summary-value">하체</span>
+      </div>
+      <div class="summary-item" style="padding-top:20px">
+        <span class="summary-title">사용한 모든 근육</span>
+        <span class="summary-value">둔근, 대퇴사두, 햄스트링, 종아리</span>
+      </div>
+    </section>
+
+    <!-- 운동 상세 기록 -->
+    <section class="exercise-records">
+      <h5 class="exercise-records-title">상세기록</h5>
+      <div class="exercise-record">
+        <div class="record-header">
+          <span class="record-title">레그익스텐션</span>
+          <button class="record-modal-btn">></button>
+        </div>
+        <div class="record-sets">
+          <div class="set"><span class="gray-text">SET1</span> 50kg x 10회</div>
+          <div class="set"><span class="gray-text">SET2</span>  50kg x 10회</div>
+          <div class="set"><span class="gray-text">SET3</span>  50kg x 10회</div>
+        </div>
+      </div>
+      <div class="exercise-record">
+        <div class="record-header">
+          <span class="record-title">아웃 타이</span>
+          <button class="record-modal-btn">></button>
+        </div>
+        <div class="record-sets">
+          <div class="set"><span class="gray-text">SET1</span> 50kg x 10회</div>
+          <div class="set"><span class="gray-text">SET2</span> 50kg x 10회</div>
+          <div class="set"><span class="gray-text">SET3</span> 50kg x 10회</div>
+        </div>
+      </div>
+    </section>
+    <div id="more-popup" class="detail-popup detail-hidden">
+        <div class="detail-popup-content">
+          <div class="detail-popup-title detail-bold">더보기</div>
+          <div class="detail-popup-item">
+            <span class="detail-popup-icon">✏️</span> 운동기록 편집
+          </div>
+          <div class="detail-popup-item">
+            <span class="detail-popup-icon">🗑️</span> 운동기록 삭제
+          </div>
+          <div class="detail-popup-item">
+            <span class="detail-popup-icon">📋</span> 운동기록 복사
+          </div>
+          <div class="detail-popup-item">
+            <span class="detail-popup-icon">➕</span> 새로운 루틴으로 등록
+          </div>
+        </div>
+    </div>
+    <div id="delete-popup" class="delete-popup hidden">
+        <div class="delete-popup-content">
+          <p class="delete-popup-title">이 운동기록을 삭제할까요?</p>
+          <div class="delete-popup-actions">
+            <button id="cancel-btn" class="delete-popup-btn cancel-btn">취소</button>
+            <button id="confirm-delete-btn" class="delete-popup-btn delete-btn">삭제</button>
+          </div>
+        </div>
+    </div>
+      
+  </div>
+  
+  <script src="/js/popup.js"></script>
+</body>
+</html>
