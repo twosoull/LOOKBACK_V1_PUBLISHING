@@ -365,27 +365,40 @@ body {
   border-radius: 20%;
 }
 
-/* 액션 메뉴 스타일 */
-#actionMenu {
-  position: fixed;
-  bottom: 4.5rem; /* + 버튼 위에 나타나도록 */
-  right: 1rem;
-  background-color: #000; /* 검은색 배경 */
-  border-radius: 12px; /* 둥근 모서리 */
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-  z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(20px); /* 숨겨질 때 아래로 이동 */
-  opacity: 0; /* 기본적으로 투명 */
-  pointer-events: none; /* 숨겨진 상태에서 클릭 불가 */
-}
+    /* 모달 스타일 */
+    #actionMenu {
+      position: fixed;
+      bottom: 80px; /* 버튼 위로 띄우기 */
+      right: 20px;
+      display: none;
+      flex-direction: column;
+      background-color: black; /* 검은색 배경 */
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
 
-#actionMenu.show {
-  transform: translateY(0); /* 표시될 때 위치 */
-  opacity: 1; /* 불투명 */
-  pointer-events: auto; /* 표시된 상태에서 클릭 가능 */
-}
+    /* 모달 표시 */
+    #actionMenu.show {
+      display: flex;
+    }
+
+    /* 메뉴 항목 스타일 */
+    #actionMenu button {
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      background-color: transparent;
+      color: white; /* 하얀 글자 */
+      text-align: left;
+      cursor: pointer;
+    }
+
+    /* 메뉴 항목 호버 효과 */
+    #actionMenu button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
 .menu-list {
   list-style: none;
@@ -1201,4 +1214,8 @@ body {
 .excercise-title h2,
 .excercise-title .star-icon{
   margin: 0px;
+}
+
+.record-section-small-header {
+  margin-bottom: 40px;
 }

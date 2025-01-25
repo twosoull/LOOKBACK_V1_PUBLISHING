@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수업기록 추가 - 1</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/excerciseRecordCreate.css">
+</head>
+<body>
+  <div class="record-add-container">
+    <!-- Header -->
+    <div class="record-header">
+      <button class="back-btn">&lt;</button>
+    </div>
+
+    <!-- Date Section -->
+    <div class="record-section-small-header">
+        <h1 class="record-title">김지혜님 13번째 수업기록 추가</h1>
+    </div>
+
+    <!-- Date Section -->
+    <div class="record-section">
+      <label for="record-date">수업 날짜</label>
+      <input type="date" id="record-date" />
+    </div>
+
+    <!-- Time Section -->
+    <div class="record-section">
+      <label>수업 시간</label>
+      <div class="input-group">
+        <div class="time-input">
+          <input type="time" />
+        </div>
+        ~
+        <div class="time-input">
+          <input type="time" />
+        </div>
+      </div>
+    </div>
+</div>
+<div class="record-add-container">
+    <!-- Next Button -->
+    <button class="create-record-btn" onclick="window.location.href='page2.html'">다음 &gt;</button>
+  </div>
+</body>
+</html>
