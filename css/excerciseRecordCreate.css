@@ -17,6 +17,15 @@
     margin: 0;
   }
 
+  .record-title-detail {
+    margin-top: 5px;
+    color: #757575;
+  }
+  .record-title-detail-icon{
+    border: none;
+    background: none;
+  }
+
   .record-section {
     margin-bottom: 20px;
   }
