@@ -8,6 +8,13 @@ body {
   color: #333; /* 기본 텍스트 색상 */
 }
 
+p {
+  margin: 5px;
+}
+
+a {
+  margin: 0px;
+}
 /* 전체 컨테이너에 좌우 여백 추가 */
 .container {
   padding: 20px; /* 좌우 여백 통일 */
@@ -39,6 +46,7 @@ body {
   background-color: #fff; /* 흰색 바탕 */
   border-bottom: 1px solid #ddd; /* 하단 경계선 추가 */
   padding: 0.5rem 0;
+  margin-bottom: 5px;
 }
 
 .category-btn {
@@ -118,8 +126,8 @@ body {
 
 .add-btn {
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: 2.5rem;
+  bottom: 6rem;
   width: 50px;
   height: 50px;
   background-color: #000; /* 검은색 버튼 */
@@ -431,6 +439,11 @@ body {
   width: 20px;  
 }
 
+.back-btn-box-text {
+  display: flex;
+  align-items: center;
+}
+
 .back-btn {
   background: none;
   border: none;
@@ -526,7 +539,7 @@ body {
   background-color: #EAEAEA; /* 회색 배경 */
   color: #757575; /* 진한 회색 텍스트 */
   border: 1px solid #EAEAEA; /* 배경과 동일한 테두리 */
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 0px 8px; /* 버튼 높이를 조정 */
   font-size: 14px;
   cursor: pointer;
@@ -636,14 +649,12 @@ body {
 /* 정렬 버튼 스타일 */
 .sort-btn {
   display: flex;
-  align-items: center;
   background: none;
   border: none;
   font-size: 14px;
   cursor: pointer;
   color: #666;
   gap: 5px;
-  padding: 10px;
   transition: color 0.2s ease-in-out;
 }
 
@@ -927,6 +938,11 @@ body {
   margin-bottom: 10px;
 }
 
+.record-header-descript {
+  display: flex;
+  font-size: 12px;
+}
+
 .record-title {
   font-size: 16px;
   font-weight: bold;
@@ -944,12 +960,20 @@ body {
 .record-sets {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .set {
+  display: flex;
+  align-items: center; /* 수직 정렬 */
   font-size: 14px;
-  padding-top: 5px
+  padding: 2px 0px; /* 여백 추가 */
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.set-detail {
+  margin-left: 30px;
 }
 
 .gray-text {
@@ -1002,7 +1026,7 @@ body {
 }
 
 .detail-title{
-  font-size: 12px;
+  font-size: 14px;
   margin: 0px;
 }
 
@@ -1218,4 +1242,551 @@ body {
 
 .record-section-small-header {
   margin-bottom: 40px;
+}
+
+/*회원관리*/
+.default-header {
+  background-color: #fff; /* 흰색 바탕 */
+  text-align: left;
+}
+
+.default-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  height: 30px;
+  padding: 0px 0px 10px 0px;
+}
+
+.default-header-item {
+  display: flex;
+  
+}
+.default-header-icon > div {
+  padding-left: 10px;
+}
+
+.default-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.default-back-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.8rem;
+}
+
+.default-nav {
+  padding-top: 10px;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.default-nav-item {
+  display: flex;
+}
+
+.user-container {
+  margin-top: 10px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh; /* 적절한 높이 설정 */
+  width: 100%; /* 가로 중앙 정렬 유지 */
+  max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
+  overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
+}
+
+.user-item-container {
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-item {
+  padding-top: 10px;
+}
+.user-info{
+  display: flex;
+  padding-top: 10px;
+}
+
+.user-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-top: 4px;
+}
+
+.user-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-descript {
+  padding-top: 7px;
+  font-size: 12px;
+}
+
+/* 고정 푸터 스타일 */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 100;
+  height: 40px; /* 🔥 푸터 높이를 명확히 지정 */
+}
+
+/* 푸터 메뉴 스타일 */
+.footer-item {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  color: #555;
+  transition: font-weight 0.2s, color 0.2s;
+}
+
+
+/* 클릭하면 볼드 & 색상 변경 */
+.footer-item.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* 회원이 없을 때 표시되는 메시지 스타일 */
+.no-users-message {
+  display: flex; /* 기본적으로 숨김 */
+  text-align: center;
+  font-size: 14px;
+  color: #757575; /* 회색 글씨 */
+  margin-top: 20px;
+}
+
+/* 회원 컨테이너 */
+.user-container2 {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 내부 요소 중앙 정렬 */
+  justify-content: center; /* 내부 요소 수직 중앙 정렬 */
+  min-height: 60vh; /* 높이를 늘려서 중앙 정렬 효과 적용 */
+  width: 100%; /* 가로 중앙 정렬 유지 */
+  position: relative; /* 부모 요소로 설정 */
+}
+
+.user-sort-modal {
+  position: absolute;
+  right: 20px; /* 화면 오른쪽 */
+  top:100px;
+  width: 100px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none; /* 기본적으로 숨김 */
+}
+
+.user-sort-modal.show {
+  display: block; /* 보이기 */
+}
+
+.user-add-text {
+  padding-top : 30px;
+  font-size: 14px;
+}
+
+.margin-top-30 {
+  margin-top : 60px;
+}
+
+/* 카카오톡 초대 버튼 */
+.kakao-invite-btn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: #fee500; /* 카카오 노란색 */
+  color: #000; /* 검은색 텍스트 */
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.kakao-invite-btn:hover {
+  background-color: #fdd835; /* 더 어두운 노란색 */
+}
+
+/* 초대 옵션 버튼 컨테이너 */
+.invite-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 초대 옵션 버튼 */
+.invite-option {
+  flex: 1;
+  height: 45px;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  border: 0.5px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.invite-option:hover {
+  background-color: #f0f0f0;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.border-none {
+  border: none;
+}
+
+
+.record-container {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh; /* 적절한 높이 설정 */
+  width: 100%; /* 가로 중앙 정렬 유지 */
+  max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
+  overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
+}
+
+.record-item-container {
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.record-item {
+  padding-top: 10px;
+}
+.record-info{
+  display: flex;
+  padding-top: 10px;
+}
+
+.record-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.record-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-top: 4px;
+}
+
+.record-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.record-descript {
+  padding-top: 7px;
+  font-size: 12px;
+  display: flex;
+}
+
+/* 고정 푸터 스타일 */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 100;
+  height: 40px; /* 🔥 푸터 높이를 명확히 지정 */
+}
+/* 고정 푸터 스타일 */
+.fixed-footer-btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 100;
+  height: 50px; /* 🔥 푸터 높이를 명확히 지정 */
+}
+
+
+
+.create-record-btn {
+  display: block;
+  width: 90%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+.record-add-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+/* 푸터 메뉴 스타일 */
+.footer-item {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  color: #555;
+  transition: font-weight 0.2s, color 0.2s;
+}
+
+
+/* 클릭하면 볼드 & 색상 변경 */
+.footer-item.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* 회원이 없을 때 표시되는 메시지 스타일 */
+.no-records-message {
+  display: flex; /* 기본적으로 숨김 */
+  text-align: center;
+  font-size: 14px;
+  color: #757575; /* 회색 글씨 */
+  margin-top: 20px;
+}
+
+/* 회원 컨테이너 */
+.record-container2 {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 내부 요소 중앙 정렬 */
+  justify-content: center; /* 내부 요소 수직 중앙 정렬 */
+  min-height: 60vh; /* 높이를 늘려서 중앙 정렬 효과 적용 */
+  width: 100%; /* 가로 중앙 정렬 유지 */
+  position: relative; /* 부모 요소로 설정 */
+}
+
+.record-sort-modal {
+  position: absolute;
+  right: 20px; /* 화면 오른쪽 */
+  top:100px;
+  width: 100px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none; /* 기본적으로 숨김 */
+}
+
+.record-sort-modal.show {
+  display: block; /* 보이기 */
+}
+
+.record-add-text {
+  padding-top : 30px;
+  font-size: 14px;
+}
+
+
+
+/* 프로필 컨테이너 */
+.profile-container {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 가운데 정렬 (이미지만) */
+  background-color: #fff;
+  margin: 20px auto;
+}
+
+/* 프로필 이미지 */
+.profile-image{
+  margin: 30px 0px;
+}
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+}
+
+/* 프로필 정보 */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  width: 100%; /* 전체 너비 사용 */
+  padding: 0 10px; /* 양쪽 여백 */
+}
+
+/* 프로필 정보 행 */
+.profile-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 라벨 스타일 */
+.profile-label {
+  font-size: 14px;
+  min-width: 80px; /* 라벨 너비 일정하게 유지 */
+}
+
+/* 값 스타일 */
+.profile-value {
+  font-size: 16px;
+  flex: 1; /* 남은 공간을 채우도록 설정 */
+}
+
+.record-detail-title{
+  display: flex;
+  align-items: center;
+}
+.title-image {
+  display: inline-block; /* 내용물 크기에 맞게 div 크기 조정 */
+  width: fit-content; /* 이미지 크기에 맞게 조정 */
+  height: fit-content;
+  overflow: hidden; /* 혹시 모를 넘침 방지 */
+}
+.title-image img {
+  width: 30px; /* 원하는 크기로 조정 */
+  height: 30px;
+  border-radius: 50%; /* 동그랗게 만들 경우 */
+  object-fit: cover; /* 이미지를 정사각형 영역에 맞게 조정 */
+}
+.title-descript {
+  display: flex;
+}
+.record-sets-feedback {
+  margin-top: 10px;
+}
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+/* 네모 박스 스타일 */
+.record-sets-feedback-command {
+  background-color: #EAEAEA;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.record-image {
+  margin-top: 10px;
+  display: flex;
+}
+.record-image-item {
+  margin-right: 10px;
+}
+
+/* 타이틀 스타일 */
+.gap-text {
+  min-width: 50px; /* 일정한 너비 확보 */
+  text-align: left; /* 왼쪽 정렬 */
+  padding-right: 0px; /* 값과 일정한 간격 유지 */
+}
+/* 세트 상세 정보 */
+.set-detail {
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.create-records {
+  margin-top: 30px;
+}
+
+
+.record-section {
+  margin-bottom: 40px;
+}
+
+.record-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.record-section input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.record-section .input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.record-section .time-input {
+  flex: 1;
+  position: relative;
+}
+
+.record-section .time-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }

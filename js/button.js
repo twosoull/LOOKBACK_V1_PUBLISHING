@@ -22,12 +22,6 @@ function setupFilterButtons() {
   document.addEventListener('DOMContentLoaded', () => {
     setupFilterButtons();
 
-    // 별 버튼 클릭 이벤트
-    const starBtn = document.querySelector('.star-btn');
-    starBtn.addEventListener('click', () => {
-        starBtn.classList.toggle('active'); // active 클래스 추가/제거
-    });
-    
     // 최근/자주 버튼 클릭 이벤트
     const filterTabs = document.querySelectorAll('.filter-tab');
     filterTabs.forEach(tab => {
