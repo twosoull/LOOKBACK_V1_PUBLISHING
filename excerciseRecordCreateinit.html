@@ -9,39 +9,51 @@
 </head>
 <body>
   <div class="record-add-container">
-    <!-- Header -->
-    <div class="record-header">
-      <button class="back-btn">&lt;</button>
-    </div>
+    <header class="default-header">
+      <div class="default-div">
+          <div>
+              <div class="back-btn-box-text">
+                  <button class="back-btn">&lt;</button>
+                  <div class="default-back-title">운동기록 추가</div>
+              </div>
+          </div>
+      </div>
+  </header>
 
-    <!-- Date Section -->
-    <div class="record-section-small-header">
-        <h1 class="record-title">김지혜님 13번째 수업기록 추가</h1>
-    </div>
-
-    <!-- Date Section -->
+  <div class="create-records">
+    <!-- 날짜 입력 -->
     <div class="record-section">
-      <label for="record-date">수업 날짜</label>
-      <input type="date" id="record-date" />
+      <label for="record-date">운동 날짜</label>
+      <input type="text" id="record-display" readonly />
+      <input type="date" id="record-date" style="display: none;" />
     </div>
-
-    <!-- Time Section -->
+  
+    <!-- 수업 시간 -->
     <div class="record-section">
-      <label>수업 시간</label>
+      <label>운동 시간</label>
       <div class="input-group">
         <div class="time-input">
-          <input type="time" />
+          <input type="text" id="start-time-display" readonly />
+          <input type="time" id="start-time" style="display: none;" />
         </div>
         ~
         <div class="time-input">
-          <input type="time" />
+          <input type="text" id="end-time-display" readonly />
+          <input type="time" id="end-time" style="display: none;" />
         </div>
       </div>
     </div>
-</div>
-<div class="record-add-container">
-    <!-- Next Button -->
-    <button class="create-record-btn" onclick="window.location.href='page2.html'">다음 &gt;</button>
   </div>
+  
+        <!-- 하단 고정 푸터 -->
+      <footer class="fixed-footer-btn">
+          <button class="create-record-btn" onclick="window.location.href='page2.html'">
+            운동 선택
+          </button>
+      </footer>
+</div>
+
+
 </body>
+<script src="/js/common.js"></script>
 </html>

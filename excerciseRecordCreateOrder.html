@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동기록 추가</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/excerciseRecordCreate.css">
+  <style>
+    /* 기존 디자인 유지 */
+    .record-add-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .record-details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      touch-action: none; /* 터치 이동 방지 */
+    }
+
+    .details-header {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .details-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .create-record-btn {
+      display: block;
+      width: 100%;
+      padding: 16px 0;
+      background-color: #000;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .create-record-btn:hover {
+      background-color: #444;
+    }
+
+    .drag-handle {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      cursor: grab;
+    }
+
+    .drag-handle svg {
+      fill: #333;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="record-add-container">
+    <!-- Header -->
+    <div class="record-header">
+      <button class="back-btn">&lt;</button>
+    </div>
+
+    <!-- Date Section -->
+    <div class="record-section-small-header">
+        <h1 class="record-title">순서 편집</h1>
+    </div>
+
+    <!-- Exercise Details Section -->
+    <div class="record-section">
+      <!-- 운동 리스트 -->
+      <div class="exercise-list" id="exercise-list">
+        <!-- 반복되는 운동 상세 -->
+        <div class="record-details exercise-section" data-id="1">
+          <div class="drag-handle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M3 10h18v2H3v-2zm0 4h18v2H3v-2z" />
+            </svg>
+          </div>
+          <div class="details-header">
+            <span class="details-title">레그 익스텐션</span>
+            <span class="exercise-pagination toggle-details-btn">
+              <button type="button" class="default-none-btn">삭제</button>
+            </span>
+          </div>
+        </div>
+
+        <div class="record-details exercise-section" data-id="2">
+          <div class="drag-handle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M3 10h18v2H3v-2zm0 4h18v2H3v-2z" />
+            </svg>
+          </div>
+          <div class="details-header">
+            <span class="details-title">벤치 프레스</span>
+            <button type="button" class="default-none-btn">삭제</button>
+          </div>
+        </div>
+        <div class="record-details exercise-section" data-id="3">
+          <div class="drag-handle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M3 10h18v2H3v-2zm0 4h18v2H3v-2z" />
+            </svg>
+          </div>
+          <div class="details-header">
+            <span class="details-title">레그 컬</span>
+            <button type="button" class="default-none-btn">삭제</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 완료 버튼 -->
+    <div class="footer">
+      <button class="create-record-btn">완료</button>
+    </div>
+  </div>
+
+  <script>
+    const list = document.getElementById('exercise-list');
+    let draggingItem = null;
+    let placeholder = null;
+
+    function createPlaceholder() {
+      placeholder = document.createElement('div');
+      placeholder.style.height = '60px';
+      placeholder.style.marginBottom = '10px';
+      placeholder.style.border = '2px dashed #ddd';
+      placeholder.style.borderRadius = '8px';
+    }
+
+    // 터치 시작
+    list.addEventListener('touchstart', (e) => {
+      const target = e.target.closest('.record-details');
+      if (target) {
+        draggingItem = target;
+        createPlaceholder();
+        target.parentNode.insertBefore(placeholder, target.nextSibling);
+        target.style.opacity = '0.5';
+        e.preventDefault();
+      }
+    });
+
+    // 터치 이동
+    list.addEventListener('touchmove', (e) => {
+      if (draggingItem) {
+        const touch = e.touches[0];
+        draggingItem.style.position = 'absolute';
+        draggingItem.style.left = `${touch.pageX}px`;
+        draggingItem.style.top = `${touch.pageY}px`;
+
+        // Placeholder 위치 업데이트
+        const elements = Array.from(list.children).filter((el) => el !== draggingItem && el !== placeholder);
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (touch.clientY > rect.top && touch.clientY < rect.bottom) {
+            list.insertBefore(placeholder, el.nextSibling);
+          }
+        });
+      }
+    });
+
+    // 터치 끝
+    list.addEventListener('touchend', () => {
+      if (draggingItem) {
+        draggingItem.style.position = '';
+        draggingItem.style.left = '';
+        draggingItem.style.top = '';
+        draggingItem.style.opacity = '1';
+        list.insertBefore(draggingItem, placeholder);
+        placeholder.remove();
+        placeholder = null;
+        draggingItem = null;
+      }
+    });
+
+    // 저장 버튼 클릭
+    document.querySelector('.create-record-btn').addEventListener('click', () => {
+      const order = Array.from(list.children).map((item, index) => ({
+        id: item.dataset.id,
+        order: index + 1,
+      }));
+      console.log('저장된 순서:', order);
+      alert('순서가 저장되었습니다!');
+    });
+  </script>
+  
+</body>
+
+</html>
