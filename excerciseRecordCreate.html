@@ -9,15 +9,19 @@
 </head>
 <body>
   <div class="record-add-container">
-    <!-- Header -->
-    <div class="record-header">
-      <button class="back-btn">&lt;</button>
-    </div>
-
+    <header class="default-header">
+      <div class="default-div">
+          <div>
+              <div class="back-btn-box-text">
+                  <button class="back-btn">&lt;</button>
+                  <div class="default-back-title">운동기록 추가</div>
+              </div>
+          </div>
+      </div>
+    </header>
     <!-- Date Section -->
     <div class="record-section-small-header">
-        <h1 class="record-title">김지혜님 13번째 수업기록 추가</h1>
-        <p class="record-title-detail">2024년 10월 30일 오후 3시 (50분)
+        <p class="record-title-detail  font-14">2024년 10월 30일 오후 3시 (50분)
           <button class="record-title-detail-icon" type="button">✏️ </button>
         </p>
     </div>
@@ -26,180 +30,681 @@
     <div class="record-section">
         <label>
             <div style="display: flex; justify-content: space-between;">
-                <span>운동별 상세기록</span>
+                <span>7개</span>
                 <span class="exercise-pagination" id="exercise-pagination">
                   <button type="button" class="default-none-btn">순서편집</button> | 
                   <button type="button" class="default-none-btn">운동추가</button>
                 </span>
             </div>
         </label>
-
-      <!-- 반복되는 운동 상세 -->
-      <div class="record-details exercise-section">
-        <div class="details-header">
-          <span class="details-title">레그 익스텐션</span>
-          <span class="exercise-pagination toggle-details-btn">접기</span>
-        </div>
-        <div class="details-contents collapsed">
-          <div class="set-list" id="set-list-1">
-              <div class="set-row">
-                  <span>set 1</span>
-                  <input type="number" placeholder="kg" /> x <input type="number" placeholder="횟수" />
-              </div>
-          </div>
-          <button class="add-set-btn add-set-btn-1">+ 세트 추가</button>
-
-          <!-- Media Section -->
-          <div class="media-section">
-              <label>사진/영상</label>
-              <div class="media-content">
-                  <div class="media-box">
-                      <img src="/images/sample-image.png" alt="이미지" />
-                      <button class="delete-btn">x</button>
+        <div class="scroll-section">
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="weight">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  레그 익스텐션
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-1">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="kg" /> x <input type="number" placeholder="횟수" />
                   </div>
-                  <div class="media-box">
-                      <img src="/images/sample-video.png" alt="영상" />
-                      <button class="delete-btn">x</button>
-                  </div>
-                  <div class="media-add">+</div>
               </div>
-          </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
 
-          <!-- Memo Section -->
-          <div class="record-section">
-              <label for="memo">메모</label>
-              <input type="text" id="memo" placeholder="메모를 입력하세요" />
-          </div>
-        </div>
-      </div>
-
-      <div class="record-details exercise-section">
-        <div class="details-header">
-          <span class="details-title">레그 컬</span>
-          <span class="exercise-pagination toggle-details-btn">접기</span>
-        </div>
-        <div class="details-contents collapsed">
-          <div class="set-list" id="set-list-2">
-              <div class="set-row">
-                  <span>set 1</span>
-                  <input type="number" placeholder="kg" /> x <input type="number" placeholder="횟수" />
-              </div>
-          </div>
-          <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
-
-          <!-- Media Section -->
-          <div class="media-section">
-              <label>사진/영상</label>
-              <div class="media-content">
-                  <div class="media-box">
-                      <img src="/images/sample-image.png" alt="이미지" />
-                      <button class="delete-btn">x</button>
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
                   </div>
-                  <div class="media-box">
-                      <img src="/images/sample-video.png" alt="영상" />
-                      <button class="delete-btn">x</button>
-                  </div>
-                  <div class="media-add">+</div>
               </div>
-          </div>
 
-          <!-- Memo Section -->
-          <div class="record-section">
-              <label for="memo">메모</label>
-              <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+          <!-- 운동 하나-->
+
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+                <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="reps">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  푸시업
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-2">
+                  <div class="set-row">
+                      <span>set 1</span>
+                      <input type="number" placeholder="횟수" />
+                  </div>
+              </div>
+              <button class="add-set-btn add-set-btn-2">+ 세트 추가</button>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+
+          <!-- 운동 하나-->
+          <div class="record-details exercise-section" data-type="running">
+            <div class="details-header">
+              <span class="details-title">
+                <span>
+                  런닝머신
+                </span>
+                <button>아이콘</button>
+              </span>
+              <span class="exercise-pagination toggle-details-btn">접기</span>
+            </div>
+            <div class="details-contents collapsed">
+              <div class="set-list" id="set-list-3">
+                  <div class="set-row">
+                    <span>시간</span>
+                    <input type="number" placeholder="분" />
+                  </div>
+                  <div class="set-row">
+                    <span>거리</span>
+                    <input type="number" placeholder="km" />
+                </div>
+              </div>
+              <div class="add-set-btns">
+                <button class="add-set-btn-small" data-running="speed">속도</button>
+                <button class="add-set-btn-small"
+                data-running="slop">경사</button>
+                <button class="add-set-btn-small"
+                data-running="heart">심박수</button>
+                <button class="add-set-btn-small"
+                data-running="kcal">칼로리</button>
+              </div>
+
+              <!-- Media Section -->
+              <div class="media-section">
+                  <label>사진/영상</label>
+                  <div class="media-content">
+                      <div class="media-box">
+                          <img src="/images/sample-image.png" alt="이미지" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-box">
+                          <img src="/images/sample-video.png" alt="영상" />
+                          <button class="delete-btn">x</button>
+                      </div>
+                      <div class="media-add">+</div>
+                  </div>
+              </div>
+
+              <!-- Memo Section -->
+              <div class="record-section">
+                  <label for="memo">메모</label>
+                  <input type="text" id="memo" placeholder="메모를 입력하세요" />
+              </div>
+            </div>
+          </div>
+          <!-- 운동 하나-->
+          </div>
     </div>
 
-    <!-- 기록 생성 버튼 -->
-    <div class="footer">
-      <button class="create-record-btn">기록 생성</button>
-    </div>
+    <!-- 하단 고정 푸터 -->
+    <footer class="fixed-footer-btn">
+      <button class="create-record-btn" onclick="window.location.href='page2.html'">
+        운동 선택
+      </button>
+  </footer>
   </div>
 
   <script>
-    // 여러 운동을 관리하기 위해 세트 추가 로직을 동적으로 처리
-    document.querySelectorAll('.exercise-section').forEach((exerciseSection, index) => {
-        const setList = exerciseSection.querySelector('.set-list'); // 해당 운동의 세트 리스트
-        const addSetBtn = exerciseSection.querySelector('.add-set-btn'); // 세트 추가 버튼
+    document.querySelectorAll('.exercise-section').forEach((exerciseSection) => {
+      const setList = exerciseSection.querySelector('.set-list');
+      const addSetBtn = exerciseSection.querySelector('.add-set-btn');
+      const exerciseType = exerciseSection.getAttribute('data-type');
+      // running 버튼들 (속도, 경사, 심박수, 칼로리)
+      const runningBtns = exerciseSection.querySelectorAll('.add-set-btn-small');
+      let setCount = setList.querySelectorAll('.set-row').length;
 
-        let setCount = setList.querySelectorAll('.set-row').length; // 세트 갯수 초기화
-
-        // 세트 추가 기능
+      // 일반 세트 추가 버튼 (for weight or reps)
+      if (addSetBtn) {
         addSetBtn.addEventListener('click', () => {
-            setCount++;
-            const newSetRow = document.createElement('div');
-            newSetRow.className = 'set-row';
+          setCount++;
+          const newSetRow = document.createElement('div');
+          newSetRow.className = 'set-row';
+
+          if (exerciseType === "weight") {
             newSetRow.innerHTML = `
-                <span>set ${setCount}</span>
-                <input type="number" placeholder="kg" /> x <input type="number" placeholder="횟수" />
-                <button class="delete-btn">삭제</button>
+              <span>set ${setCount}</span>
+              <input type="number" placeholder="kg" /> x <input type="number" placeholder="횟수" />
+              <button class="delete-btn">x 삭제</button>
             `;
-            setList.appendChild(newSetRow);
-            attachDeleteHandler(newSetRow.querySelector('.delete-btn'));
+          } else if (exerciseType === "reps") {
+            newSetRow.innerHTML = `
+              <span>set ${setCount}</span>
+              <input type="number" placeholder="횟수" />
+              <button class="delete-btn">x 삭제</button>
+            `;
+          }
+
+          setList.appendChild(newSetRow);
+          attachDeleteHandler(newSetRow.querySelector('.delete-btn'));
         });
+      }
 
-        // 세트 삭제 및 재정렬
-        function attachDeleteHandler(button) {
-            button.addEventListener('click', () => {
-                const setRow = button.parentElement;
-                setRow.remove();
-                setCount--;
-                reorderSets();
-            });
-        }
+      runningBtns.forEach(button => {
+        button.addEventListener('click', () => {
+          const dataType = button.getAttribute('data-running');
+          // 이미 해당 항목이 추가되었는지 검사
+          if (setList.querySelector(`.set-row[data-running="${dataType}"]`)) {
+            // 이미 있으면 바로 비활성화 (아래와 같이)
+            button.disabled = true;
+            button.classList.add("disabled");
+            return;
+          }
 
-        function reorderSets() {
-            const setRows = setList.querySelectorAll('.set-row');
-            setRows.forEach((row, idx) => {
-                const setLabel = row.querySelector('span');
-                setLabel.textContent = `set ${idx + 1}`;
-            });
-        }
+          // 운동 유형에 따른 레이블과 플레이스홀더 설정
+          let labelText = "";
+          let placeholderText = "";
 
-        // 초기 삭제 버튼 연결
-        setList.querySelectorAll('.delete-btn').forEach(attachDeleteHandler);
+          switch (dataType) {
+            case "speed":
+              labelText = "속도";
+              placeholderText = "km/h";
+              break;
+            case "slop":
+              labelText = "경사도";
+              placeholderText = "%";
+              break;
+            case "heart":
+              labelText = "심박수";
+              placeholderText = "BPM";
+              break;
+            case "kcal":
+              labelText = "칼로리";
+              placeholderText = "Kcal";
+              break;
+          }
+
+          // 새로운 세트 행 생성
+          const newRow = document.createElement('div');
+          newRow.className = 'set-row';
+          // data attribute로 구분 (삭제 시 확인에 사용)
+          newRow.setAttribute('data-running', dataType);
+          newRow.innerHTML = `
+            <span>${labelText}</span>
+            <input type="number" placeholder="${placeholderText}" />
+            <button class="delete-btn">x 삭제</button>
+          `;
+
+          setList.appendChild(newRow);
+          // 버튼 비활성화와 스타일 변경
+          button.disabled = true;
+          button.classList.add("disabled");
+          // 삭제 버튼 핸들러 연결 (추가 인자로 dataType과 해당 버튼을 넘김)
+          attachDeleteHandler(newRow.querySelector('.delete-btn'), dataType, button);
+        });
+      });
+      
+      // 세트 삭제 및 재정렬 (각 섹션 내에서 set 번호 재조정)
+      function attachDeleteHandler(delButton, runningType, runningBtn) {
+        delButton.addEventListener('click', () => {
+          const setRow = delButton.parentElement;
+          setRow.remove();
+          // 삭제 시, 만약 running 항목이면 해당 버튼을 재활성화
+          if (runningType && runningBtn) {
+            runningBtn.disabled = false;
+            runningBtn.classList.remove("disabled");
+          }
+          reorderSets();
+        });
+      }
+
+      function reorderSets() {
+        const setRows = setList.querySelectorAll('.set-row');
+        // setRows 중에서 일반 세트 (레이블이 "set"으로 시작하는 경우)만 재정렬
+        let count = 0;
+        setRows.forEach((row) => {
+          const labelElem = row.querySelector('span');
+          if (labelElem && labelElem.textContent.trim().startsWith("set")) {
+            count++;
+            labelElem.textContent = `set ${count}`;
+          }
+        });
+        // 업데이트: 일반 세트의 개수를 setCount로 반영
+        setCount = count;
+      }
+
+      // 초기 삭제 버튼 연결 (이미 생성된 삭제 버튼)
+      setList.querySelectorAll('.delete-btn').forEach(btn => {
+        // 중복 연결 방지를 위해 필요시 removeEventListener (생략 가능)
+        btn.removeEventListener('click', () => {});
+        // attachDeleteHandler 호출이 이미 되어 있다면 건너뛰기
+      });
     });
 
     // 세부 내용 펼치기/접기
     document.querySelectorAll('.toggle-details-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const exerciseItem = button.closest('.record-details');
-            const details = exerciseItem.querySelector('.details-contents');
-            const isCollapsed = details.classList.toggle('collapsed');
-            button.textContent = isCollapsed ? '펼치기' : '접기';
-        });
+      button.addEventListener('click', () => {
+        const exerciseItem = button.closest('.record-details');
+        const details = exerciseItem.querySelector('.details-contents');
+        const isCollapsed = details.classList.toggle('collapsed');
+        button.textContent = isCollapsed ? '펼치기' : '접기';
+
+        // 펼쳐진 경우, 스크롤 컨테이너의 맨 위에 해당 섹션이 오도록 스크롤 조정
+        if (!isCollapsed) {
+          const container = document.querySelector('.scroll-section');
+          // exerciseItem의 상단 위치 (스크롤 컨테이너 내부 상대 위치)
+          const offset = exerciseItem.offsetTop-220;
+          container.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
+
+    // 사진/영상 삭제 기능
+    document.querySelectorAll('.delete-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const mediaBox = this.closest('.media-box');
+        if (mediaBox) {
+          mediaBox.remove();
+        }
+      });
+    });
+    
   </script>
 
-  <style>
-
-        /* 기록 생성 버튼 스타일 */
-        .create-record-btn {
-      display: block;
-      width: 100%;
-      padding: 16px 0;
-      background-color: #000;
-      color: #fff;
-      font-size: 18px;
-      text-align: center;
-      cursor: pointer;
-      border: none;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    .create-record-btn:hover {
-      background-color: #444;
-    }
-
-    /* 컨테이너 여백 */
-    .record-add-container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-  </style>
 </body>
 </html>

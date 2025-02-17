@@ -1299,6 +1299,11 @@ a {
   width: 100%; /* 가로 중앙 정렬 유지 */
   max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
   overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
+  -ms-overflow-style: none;
+}
+
+.user-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .user-item-container {
@@ -1480,6 +1485,11 @@ a {
   width: 100%; /* 가로 중앙 정렬 유지 */
   max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
   overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
+  -ms-overflow-style: none;
+}
+
+.record-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .record-item-container {
@@ -1555,8 +1565,6 @@ a {
   z-index: 100;
   height: 50px; /* 🔥 푸터 높이를 명확히 지정 */
 }
-
-
 
 .create-record-btn {
   display: block;
@@ -1752,8 +1760,22 @@ a {
 }
 
 
-.record-section {
-  margin-bottom: 40px;
+.scroll-section {
+  min-height: 50vh;
+  max-height: calc(85vh - 120px);
+  overflow-y: auto;
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE, Edge */
+  -ms-overflow-style: none;
+}
+
+.scroll-section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.bottom-30 {
+  margin-bottom: 30px;
 }
 
 .record-section label {
@@ -1789,4 +1811,137 @@ a {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+}
+
+
+.record-details {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+}
+
+.record-details .details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-details .details-header .details-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.record-details .set-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+}
+
+/* 레이블을 일정 너비로 고정하여 정렬 유지 */
+.set-row span {
+  min-width: 50px;    /* 레이블의 최소 너비 */
+  display: inline-block;
+  text-align: left;
+}
+
+/* 입력 박스 스타일 (원하는 고정 너비로 지정) */
+.set-row input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.record-details .set-row span {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.record-details .set-row input {
+  width: 60px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.record-details .set-row .delete-btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-left: auto;
+}
+
+.record-details .set-row .delete-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.record-details .add-set-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #fff;
+  color: #000;
+  border: 0.5px solid #000;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.add-set-btns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.record-details .add-set-btn-small {
+  display: block;
+  width: 24%;
+  padding: 8px;
+  background-color: #fff;
+  color: #000;
+  border: 0.5px solid #000;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.record-details .media-section {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+/* 기본 running 버튼 스타일 */
+.add-set-btn-small {
+  padding: 8px 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.add-set-btn-small:hover {
+  background-color: #444;
+}
+
+/* 비활성화된 버튼 스타일 */
+.add-set-btn-small.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
