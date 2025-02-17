@@ -15,6 +15,17 @@ p {
 a {
   margin: 0px;
 }
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20px;
+  unicode-bidi: isolate;
+}
 /* 전체 컨테이너에 좌우 여백 추가 */
 .container {
   padding: 20px; /* 좌우 여백 통일 */
@@ -897,7 +908,24 @@ a {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+
+  width: 90%;  /* 원하는 경우 100% 너비 */
 }
+
+/* 네모 박스 스타일 */
+.summary-box-media {
+  background-color: #EAEAEA;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  width: 90%;  /* 원하는 경우 100% 너비 */
+  height: 30vh; /* 화면 높이의 30% */
+}
+
 
 .summary-item {
   flex: 1 1 calc(50% - 10px);
@@ -1426,6 +1454,10 @@ a {
   margin-top : 60px;
 }
 
+.margin-top-20 {
+  margin-top : 20px;
+}
+
 /* 카카오톡 초대 버튼 */
 .kakao-invite-btn {
   display: block;
@@ -1944,4 +1976,33 @@ a {
 .add-set-btn-small.disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.line {
+
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.exercise-description {
+  margin-top: 20px;
+}
+
+.exercise-description-mid-title {
+  margin: 10px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+
+.exercise-description-detail {
+  margin: 10px 0px 0px 0px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.bold {
+  font-weight: bold;
 }
