@@ -1685,6 +1685,15 @@ ul {
   background-color: #fff;
   margin: 20px auto;
 }
+/* 프로필 컨테이너 */
+.profile-container2 {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 가운데 정렬 (이미지만) */
+  background-color: #fff;
+  margin: 10px auto;
+}
+
 
 /* 프로필 이미지 */
 .profile-image{
@@ -1698,9 +1707,31 @@ ul {
   margin-bottom: 15px;
   border: 2px solid #ddd;
 }
+/* 프로필 이미지 */
+.profile-image2{
+  margin: 60px 0px;
+}
+.profile-image2 img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+}
+
 
 /* 프로필 정보 */
 .profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  width: 100%; /* 전체 너비 사용 */
+  padding: 0 10px; /* 양쪽 여백 */
+}
+
+.profile-info2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1714,6 +1745,13 @@ ul {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+}
+
+/* 프로필 정보 행 */
+.profile-row2 {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 /* 라벨 스타일 */
@@ -1984,6 +2022,12 @@ ul {
   border-bottom: 1px solid #ddd;
   padding: 0.5rem 0;
 }
+.line2 {
+
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
 
 .exercise-description {
   margin-top: 20px;
@@ -2005,4 +2049,291 @@ ul {
 
 .bold {
   font-weight: bold;
+}
+
+.main-h1 {
+      font-size: 100px;
+      color: #000;
+      margin-bottom:300px;
+      text-align: center;
+      font-weight: 900
+}
+
+/* 카카오 버튼 스타일 */
+.kakao-btn {
+  width: 800px;
+  height: 130px;
+  background-color: #F1E157;
+  color: #000;
+  font-size: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.join-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 두 개의 박스를 가로로 나란히 배치하고, 공간을 균등 분배 */
+.user-type-container {
+  display: flex;
+  gap: 1rem;               /* 박스 사이 간격 */
+  justify-content: center; /* 가운데 정렬 */
+  margin-top: 50px;        /* 위쪽 여백 */
+  max-width: 350px;        /* 예시: 컨테이너 최대 너비 (원하는 값으로 조정) */
+  margin-left: auto;       /* 가로 가운데 정렬을 위해 추가 */
+  margin-right: auto;
+}
+
+/* 박스 기본 스타일(회색 테두리, 회색 글씨) */
+.user-type-box {
+  flex: 1;                /* 부모 컨테이너 내부에서 너비를 균등 분배 */
+  border: 1px solid #ccc; /* 초기 회색 테두리 */
+  color: #ccc;            /* 초기 회색 글씨 */
+  padding: 1rem 0;        /* 세로 여백(가로는 flex로 맞추기 때문에 굳이 많이 안 줘도 됨) */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;     /* 텍스트 가운데 정렬 */
+  cursor: pointer;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, color 0.3s ease; 
+  /* ↑ 클릭 시 테두리/글씨 색이 서서히 변하도록 */
+}
+
+/* 선택된 박스(active) 스타일(검은 테두리, 검은 글씨) */
+.user-type-box.active {
+  border-color: #000;
+  color: #000;
+}
+
+.user-right-display {
+  text-align: right;
+}
+
+/* 마이페이지 최상위 섹션 (배경, 여백 등) */
+.mypage-profile {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px; /* 아래 섹션과 간격 */
+}
+
+/* 프로필 카드 안의 첫 줄(이미지+이름, 수정하기 버튼) */
+.profile-top-row {
+  align-items: center;
+  justify-content: space-between; /* 왼쪽: 프로필, 오른쪽: 버튼 */
+}
+
+/* 상단 행(프로필 사진 + 이름 + 화살표) */
+.card-top-row {
+  display: flex;            /* 가로로 나란히 배치 */
+  align-items: center;      /* 세로 중앙 정렬 */
+  justify-content: space-between; /* 왼쪽 요소와 오른쪽 화살표 사이를 최대 간격으로 */
+}
+
+/* 왼쪽 영역: 프로필 이미지 + 텍스트 묶음 */
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+
+/* 왼쪽 영역(프로필 사진 + 텍스트) */
+.card-left {
+  display: flex;       /* 가로로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 15px;           /* 이미지와 텍스트 간격 */
+}
+
+
+/* 프로필 사진 래퍼 */
+.profile-photo img {
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%; /* 동그랗게 */
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* 프로필 텍스트 (이름, 나이, 키 등) */
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* 이름(제일 강조) */
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 나이/성별/키/몸무게 등 */
+.profile-stats {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 수정하기 버튼 */
+.edit-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.edit-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* 연결된 트레이너 섹션 */
+.trainer-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+/* "연결된 트레이너" 타이틀 */
+.trainer-title {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* 트레이너 이름 + 화살표 한 줄 */
+.trainer-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 왼쪽: 이름, 오른쪽: > */
+  cursor: pointer;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+}
+
+/* 트레이너 이름 */
+.trainer-name {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 화살표 스타일 */
+.trainer-arrow {
+  color: #999;
+  font-size: 16px;
+}
+
+/* 약관 및 정책 / 계정 */
+.mypage-menu {
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 두 그룹 간 간격 */
+  margin-top: 60px;
+}
+
+/* 메뉴 그룹(예: "약관 및 정책" 섹션, "계정" 섹션) */
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 그룹 타이틀(예: "약관 및 정책") */
+.menu-title {
+  font-size: 12px;
+  color: #757575;
+  margin-bottom: 5px;
+}
+
+/* 메뉴 아이템(예: 개인정보처리방침, 이용약관, 로그아웃, 탈퇴) */
+.menu-item {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 0;
+  transition: background-color 0.2s;
+}
+.menu-item:hover {
+  background-color: #f9f9f9;
+}
+
+.profile-bottom {
+  border-top: 1px solid #eee;
+  justify-content: center;
+  display: flex
+;
+}
+
+/* 마이페이지 최상위 섹션 (배경, 여백 등) */
+.mypage-profile-with{
+  background-color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 8px;
+  margin: 30px 0px; /* 아래 섹션과 간격 */
+}
+
+
+
+.card-photo {
+  padding-right: 200px;
+}
+
+.mypage-profile-card {
+  background-color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.trainer-title {
+  font-size: 12px;
+  color: #757575;
+}
+
+/* 화살표는 줄 가장 오른쪽에 배치 */
+.profile-arrow {
+  margin-left: auto; /* 왼쪽 요소를 밀어내고 오른쪽 끝으로 */
+  color: #999;       /* 화살표 색상 */
+  font-size: 16 px;   /* 화살표 크기 */
+  cursor: pointer;   /* 클릭 가능하게 할 경우 */
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* 입력 래퍼를 relative로 설정해 내부 단위를 절대 위치로 배치 */
+.input-wrapper {
+  position: relative;
+}
+
+/* input의 오른쪽에 단위가 들어갈 공간 확보 (예: 40px) */
+.input-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+/* 단위 텍스트는 입력 필드의 오른쪽 중앙에 고정 */
+.input-unit {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none; /* 단위 텍스트 위에서 마우스 이벤트 차단 */
 }
