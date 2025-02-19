@@ -1,6 +1,12 @@
 /* 공통 스타일 */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family: Pretendard-Regular;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -1008,6 +1014,10 @@ ul {
   color: #757575;
 }
 
+.gray-text-row {
+  color: #AEAEAE;
+}
+
 /* 헤더 아이콘 스타일 */
 .header-right {
   display: flex;
@@ -1844,6 +1854,20 @@ ul {
   display: none; /* Chrome, Safari, Opera */
 }
 
+.scroll-section-mid {
+  min-height: 50vh;
+  max-height: calc(80vh - 120px);
+  overflow-y: auto;
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE, Edge */
+  -ms-overflow-style: none;
+}
+
+.scroll-section-mid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .bottom-30 {
   margin-bottom: 30px;
 }
@@ -2048,7 +2072,7 @@ ul {
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .main-h1 {
@@ -2126,6 +2150,7 @@ ul {
 .profile-top-row {
   align-items: center;
   justify-content: space-between; /* 왼쪽: 프로필, 오른쪽: 버튼 */
+  border-radius: 8px;
 }
 
 /* 상단 행(프로필 사진 + 이름 + 화살표) */
@@ -2142,6 +2167,16 @@ ul {
   gap: 15px;
   padding: 20px;
 }
+
+/* 왼쪽 영역: 프로필 이미지 + 텍스트 묶음 */
+.trainer-profile-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+}
+
 
 
 /* 왼쪽 영역(프로필 사진 + 텍스트) */
@@ -2192,6 +2227,19 @@ ul {
   border-radius: 4px;
   transition: background-color 0.2s;
 }
+
+.edit-btn-before {
+  background: #757575;
+  border: none;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
 .edit-btn:hover {
   background-color: #f0f0f0;
 }
@@ -2275,8 +2323,16 @@ ul {
 .profile-bottom {
   border-top: 1px solid #eee;
   justify-content: center;
-  display: flex
-;
+  display: flex;
+}
+
+.profile-bottom-before {
+  border-top: 1px solid #AEAEAE;
+  justify-content: center;
+  display: flex;
+  background-color: #757575;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 /* 마이페이지 최상위 섹션 (배경, 여백 등) */
@@ -2300,11 +2356,37 @@ ul {
   padding: 10px 20px;
   margin-bottom: 20px;
 }
+
+.trainer-profile-card {
+  margin-top:20px;
+  background-color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 8px;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+}
+
+.trainer-profile-card-item {
+  margin-top:10px;
+  background-color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 8px;
+  padding: 10px 10px;
+}
+
+.trainer-profile-card-item-container {
+  margin-top: 20px;
+}
+
 .trainer-title {
   font-size: 12px;
   color: #757575;
 }
 
+.trainer-profile-item {
+  display: flex;
+  justify-content: space-between;
+}
 /* 화살표는 줄 가장 오른쪽에 배치 */
 .profile-arrow {
   margin-left: auto; /* 왼쪽 요소를 밀어내고 오른쪽 끝으로 */
@@ -2336,4 +2418,86 @@ ul {
   transform: translateY(-50%);
   color: #999;
   pointer-events: none; /* 단위 텍스트 위에서 마우스 이벤트 차단 */
+}
+
+
+.basic-description {
+  margin: 40px 0px 0px 0px;
+}
+
+.basic-description-mid-title {
+  margin: 10px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.basic-description-detail {
+  margin: 10px 0px 0px 0px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.profile-description-detail {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.basic-description-detail-box {
+  margin-top: 15px;
+}
+
+.profile-box {
+  margin-top: 15px;
+}
+
+.basic-description-detail-content {
+  margin: 0px;
+  font-size: 12px;
+  line-height: 22px; 
+}
+
+.card-next {
+  margin-right: 20px;
+}
+
+.basic-textarea {
+  width: 92%;
+  min-height: 100px; /* 최소 높이 */
+  max-height: 300px; /* 최대 높이 설정 가능 (원하는 크기로 조정) */
+  height: auto;
+  overflow: hidden;
+  resize: none; /* 사용자가 수동으로 크기 조절 못 하게 */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  padding: 12px;
+}
+
+/* placeholder 스타일 조정 */
+textarea::placeholder {
+  color: #aaa; /* 부드러운 회색 */
+  font-size: 14px;
+  font-style: Pretendard-Regular;
+  opacity: 1; /* 기본적으로 흐려지는 걸 방지 */
+  transition: all 0.3s ease;
+  padding: 12px;
+  font-weight: 400px;
+}
+
+/* 사용자가 입력을 시작하면 placeholder가 자연스럽게 사라지도록 */
+textarea:focus::placeholder {
+  opacity: 0.5;
+  transform: translateY(-4px);
+}
+
+.basic-description-with-plus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-default {
+  all: unset; /* 모든 기본 스타일 제거 */
+  display: inline-block; /* 기본적인 버튼 레이아웃을 유지 */
+  font-size: 16px;
 }
