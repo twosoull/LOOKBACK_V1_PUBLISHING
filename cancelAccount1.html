@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 기록 어플</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- 전체 컨테이너 -->
+  <div class="container">
+    <header class="default-header">
+        <div class="default-div">
+            <div>
+                <div class="back-btn-box-text">
+                    <button class="back-btn">&lt;</button>
+                    <div class="default-back-title">탈퇴</div>
+                </div>
+            </div>
+        </div>
+      </header>
+      <div class="">
+          <p class="join-title font-16">
+            이영훈님, 정말 탈퇴하시겠어요?
+          </p>
+      </div>
+      <!-- 자기소개 -->
+      <section class="basic-description margin-top-20">
+        <div class="basic-description-detail-box">
+          <div>dd</div>
+          <p class="basic-description-detail-no-mrg ">
+            계정을 삭제하면 운동기록을 포함한 모든 활동 정보가 삭제되며, 삭제된 정보는 복구되지 않아요.
+          </p>
+        </div>
+        <div class="basic-description-detail-box">
+          <div>dd</div>
+          <p class="basic-description-detail-no-mrg ">
+            연결된 트레이너가 있는 경우, 탈퇴 즉시 연결이 해제됩니다.
+          </p>
+        </div>
+      </section>
+      <div class="title-container-sub margin-top-60">
+        <p class="join-title-sub">
+          탈퇴하시려는 이유를 알려주세요.
+        </p>
+      </div>
+      <!--셀렉트 위치-->
+      <div class="select-section">
+        <div class="custom-dropdown">
+          <div class="dropdown-selected" id="dropdown-selected">선택</div>
+          <div class="dropdown-options" id="dropdown-options">
+            <div class="dropdown-option" data-value="1">자주 사용하지 않아요.</div>
+            <div class="dropdown-option" data-value="2">서비스 이용이 불편해요.</div>
+            <div class="dropdown-option" data-value="3">콘텐츠가 부족해요.</div>
+            <div class="dropdown-option" data-value="4">더 이상 PT를 받지 않아요.</div>
+            <div class="dropdown-option" data-value="5">새 계정을 만들고 싶어요.</div>
+            <div class="dropdown-option" data-value="6">기타</div>
+          </div>
+        </div> 
+      </div>
+      <section class="basic-description no-mrg">
+        <div class="basic-description-detail-box">
+          <p class="basic-description-detail">
+            <textarea class="basic-textarea" placeholder="어떤 점이 불편하셨나요? 소중한 의견을 담아 더 나은 서비스로 돌아올게요."></textarea>
+          </p>
+        </div>
+      </section>
+          <!-- 체크박스 -->
+    <footer class="fixed-footer-btn-with">
+        <div class="checkbox-section-footer">
+          <input class="" type="checkbox" id="re-enroll" />
+          <label class="" for="re-enroll"> &nbsp 회원탈퇴 유의사항을 확인하였으며 이에 동의합니다.</label>
+        </div>
+        <div class="fixed-footer-btn-2">
+          <button class="create-record-btn-with" onclick="window.location.href='page2.html'">
+            탈퇴하기
+          </button>
+        </div>
+    </footer>
+
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/button.js"></script>
+  <script>
+    // 모든 박스에 대해 클릭 이벤트를 등록
+    document.querySelectorAll('.user-type-box').forEach(box => {
+      box.addEventListener('click', () => {
+        // 우선 모든 박스에서 active 클래스를 제거
+        document.querySelectorAll('.user-type-box')
+                .forEach(b => b.classList.remove('active'));
+        // 클릭한 박스에만 active 클래스 부여
+        box.classList.add('active');
+      });
+    });
+    // Open and close dropdown when clicking the selected element
+document.getElementById('dropdown-selected').addEventListener('click', function () {
+  document.querySelector('.custom-dropdown').classList.toggle('open');
+});
+
+// Update the selected value when an option is clicked
+document.querySelectorAll('.dropdown-option').forEach(function (option) {
+  option.addEventListener('click', function () {
+    const value = this.textContent;
+    document.getElementById('dropdown-selected').textContent = value;
+    document.querySelector('.custom-dropdown').classList.remove('open');
+  });
+});
+
+  </script>
+</body>
+</html>

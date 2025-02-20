@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수업기록 추가 - 1</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/excerciseRecordCreate.css">
+</head>
+<body>
+  <div class="record-add-container">
+    <header class="default-header">
+      <div class="default-div">
+          <div>
+              <div class="back-btn-box-text">
+                  <button class="back-btn">&lt;</button>
+                  <div class="default-back-title">교육&수료</div>
+              </div>
+          </div>
+      </div>
+    </header>
+
+  <div class="create-records">
+    <!-- 텍스트 입력 -->
+    <div class="record-section bottom-30">
+      <label for="record-date">교육 및 수료증명 <span class="valid">*</span></label>
+      <input type="text" id="record-display"
+      placeholder="경력명을 입력해주세요." />
+   </div>
+
+    <!-- 텍스트 입력 -->
+    <div class="record-section bottom-30">
+      <label for="record-date">수료시 <span class="valid">*</span></label>
+      <input type="text" id="record-display"
+      placeholder="취득연월" />
+    </div>
+      
+    <!-- 텍스트 입력 -->
+    <div class="record-section bottom-30">
+      <label for="record-date">수료증 이미지 <span class="valid">*</span></label>
+      <button class="photo-upload-btn" type="button">+사진첨부</button>
+    </div>
+
+    <div class="record-section bottom-30" style="width: 107%">
+      <label for="certificate-image">수료증 이미지 <span class="valid">*</span></label>
+      <div class="file-input-container">
+        <input type="text" id="file-name" placeholder="image_title.jpg" readonly />
+        <button type="button" class="file-change-btn" onclick="document.getElementById('file-upload').click()">변경</button>
+        <input type="file" id="file-upload" style="display: none;" onchange="updateFileName()" />
+      </div>
+    </div>
+
+  </div>
+  
+    <!-- 하단 고정 푸터 -->
+  <footer class="fixed-footer-btn">
+      <button class="create-record-btn" onclick="window.location.href='page2.html'">
+        저장
+      </button>
+  </footer>
+</div>
+
+
+</body>
+<script src="/js/common.js"></script>
+<script>
+  function updateFileName() {
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('file-name');
+    
+    const fileName = fileInput.files[0] ? fileInput.files[0].name : '';
+    fileNameDisplay.value = fileName;
+  }
+</script>
+</html>

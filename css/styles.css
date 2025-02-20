@@ -11,7 +11,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #fff; /* 흰색 배경 */
-  color: #333; /* 기본 텍스트 색상 */
+  color: #000000; /* 기본 텍스트 색상 */
 }
 
 p {
@@ -487,6 +487,10 @@ ul {
 }
 
 .search-input::placeholder {
+  color: #AEAEAE; /* 플레이스홀더 색상 */
+}
+
+input::placeholder {
   color: #AEAEAE; /* 플레이스홀더 색상 */
 }
 
@@ -1313,6 +1317,7 @@ ul {
 .default-back-title {
   font-size: 16px;
   font-weight: bold;
+  color: #000000;
   padding: 0.8rem;
 }
 
@@ -1458,14 +1463,6 @@ ul {
 .user-add-text {
   padding-top : 30px;
   font-size: 14px;
-}
-
-.margin-top-30 {
-  margin-top : 60px;
-}
-
-.margin-top-20 {
-  margin-top : 20px;
 }
 
 /* 카카오톡 초대 버튼 */
@@ -1805,6 +1802,10 @@ ul {
 .font-14 {
   font-size: 14px;
 }
+
+.font-16 {
+  font-size: 16px;
+}
 /* 네모 박스 스타일 */
 .record-sets-feedback-command {
   background-color: #EAEAEA;
@@ -1876,7 +1877,8 @@ ul {
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
-  color: #333;
+  color: #000000;
+  font-weight: bold;
 }
 
 .record-section input {
@@ -2100,6 +2102,12 @@ ul {
   font-size: 22px;
   font-weight: bold;
 }
+
+.join-title-sub{
+  font-size: 14px;
+  font-weight: bold;
+}
+
 
 /* 두 개의 박스를 가로로 나란히 배치하고, 공간을 균등 분배 */
 .user-type-container {
@@ -2425,6 +2433,7 @@ ul {
   margin: 40px 0px 0px 0px;
 }
 
+
 .basic-description-mid-title {
   margin: 10px 0px 0px 0px;
   font-size: 14px;
@@ -2436,6 +2445,12 @@ ul {
   margin: 10px 0px 0px 0px;
   font-size: 14px;
   line-height: 22px;
+  width: 100%;
+}
+.basic-description-detail-no-mrg {
+  margin: 10px 0px 0px 0px;
+  font-size: 12px;
+  line-height: 22px;
 }
 .profile-description-detail {
   margin: 0px;
@@ -2444,6 +2459,7 @@ ul {
 }
 .basic-description-detail-box {
   margin-top: 15px;
+  display: flex;
 }
 
 .profile-box {
@@ -2461,7 +2477,7 @@ ul {
 }
 
 .basic-textarea {
-  width: 92%;
+  width: 93%;
   min-height: 100px; /* 최소 높이 */
   max-height: 300px; /* 최대 높이 설정 가능 (원하는 크기로 조정) */
   height: auto;
@@ -2500,4 +2516,251 @@ textarea:focus::placeholder {
   all: unset; /* 모든 기본 스타일 제거 */
   display: inline-block; /* 기본적인 버튼 레이아웃을 유지 */
   font-size: 16px;
+}
+
+.valid {
+  color: #D65108;
+}
+
+
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text-section {
+  width: 48%;  /* Adjusting width to allow some space between sections */
+}
+
+.text-section input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.text-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+.left {
+  text-align: left;  /* Ensure input is aligned to the left */
+}
+
+.right {
+  text-align: right;  /* Ensure input is aligned to the right */
+}
+
+.photo-upload-btn {
+  width:100%;
+  background-color: #fff;  /* Light gray background */
+  color: #000000;                 /* Dark gray text */
+  font-size: 14px;
+  font-weight:400px;
+  padding: 10px 20px;
+  border: 0.5px solid #000000;      /* Light border */
+  border-radius: 4px;          /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s; /* Smooth color transition */
+}
+
+.photo-upload-btn:focus {
+  outline: none;               /* Remove default focus outline */
+  border-color: #ccc;          /* Highlight border on focus */
+}
+
+
+#file-name {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.file-change-btn {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.file-change-btn:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.file-change-btn:focus {
+  outline: none;
+  border-color: #ccc;
+}
+
+.checkbox-section {
+  font-size: 14px;
+}
+
+.checkbox-section label {
+  margin-right: 10px;
+}
+
+.checkbox-section input[type="checkbox"] {
+  cursor: pointer;
+  border-color: #ddd;
+}
+
+.select-section {
+  margin-top: 20px;
+}
+
+.select-section label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-selected {
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-option {
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
+
+.custom-dropdown.open .dropdown-options {
+  display: block;
+}
+
+.custom-dropdown.open .dropdown-selected {
+  border-color: #000000;
+}
+
+.custom-dropdown .dropdown-selected::after {
+  content: '▼';
+  font-size: 14px;
+  color: #000000;
+}
+
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.margin-top-60 {
+  margin-top : 60px;
+}
+
+.margin-top-30 {
+  margin-top : 60px;
+}
+
+.margin-top-20 {
+  margin-top : 20px;
+}
+/* 체크박스 섹션 스타일 */
+.checkbox-section-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.create-record-btn-with {
+  display: block;
+  width: 90%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+.fixed-footer-btn-2 {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  padding: 30px 0;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 100;
+  height: 50px; /* 푸터 높이 지정 */
+}
+
+
+.fixed-footer-btn-with {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 30px 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 100;
+  height: 100px; /* 푸터 높이 지정 */
+}
+
+.no-mrg {
+  margin: 0px;
 }
