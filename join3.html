@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>운동 기록 어플</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -16,43 +16,25 @@
         <div class="default-div">
             <div>
                 <div class="back-btn-box-text">
-                    <button class="back-btn">&lt;</button>
+                  <button class="back-btn"><img src="./icons/chevron-left.svg" alt=""></button>
                 </div>
             </div>
         </div>
       </header>
       <div class="">
           <p class="join-title ">
-            회원님의 키와 몸무게를 알려주세요.
+            가입이 완료 되었어요!
           </p>
-      </div>
-      <div class="create-records">
-        <!-- 키 입력 -->
-        <div class="record-section bottom-30">
-          <label for="record-date">키</label>
-          <div class="record-section bottom-30">
-            <div class="input-wrapper">
-              <input type="text" id="record-display" />
-              <span class="input-unit">cm</span>
-            </div>
-          </div>
-        </div>
-        <!-- 몸무게 입력 -->
-        <div class="record-section bottom-30">
-          <label for="record-date">몸무게</label>
-          <div class="record-section bottom-30">
-            <div class="input-wrapper">
-              <input type="text" id="record-display" />
-              <span class="input-unit">kg</span>
-            </div>
-          </div>
-        </div>
+          <br/>
+          <p class="join-title ">
+            이제 트레이너님과 함께 회원님의 운동을 기록해보세요!
+          </p>
       </div>
   
 
     <footer class="fixed-footer-btn">
         <button class="create-record-btn" onclick="window.location.href='page2.html'">
-          다음
+          확인
         </button>
     </footer>
 

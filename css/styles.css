@@ -187,7 +187,7 @@ ul {
   justify-content: center;
   background-color: #fff; /* 흰 바탕 */
   border: 1px solid #ddd; /* 회색 테두리 */
-  border-radius: 12px; /* 약간 둥근 네모 박스 */
+  border-radius: 5px; /* 약간 둥근 네모 박스 */
   padding: 0.3rem 0.5rem;
   cursor: pointer;
   font-size: 12px; /* 텍스트 크기 축소 */
@@ -456,11 +456,23 @@ ul {
 }
 
 .back-btn {
+  margin-top: 4px;
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0;
+}
+
+.icon-btn-ellypsis{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn-ellypsis img {
+  width: 15px;
+  height: 15px;
 }
 
 .search-container {
@@ -681,6 +693,10 @@ ul {
   fill: #000;
 }
 
+.sort-btn img {
+  width: 14px;
+}
+
 .sort-modal {
   position: absolute;
   right: 20px; /* 화면 오른쪽 */
@@ -756,26 +772,38 @@ ul {
 }
 
 .exercise-image img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   object-fit: cover;
 }
-
 .exercise-text {
   display: flex;
   flex-direction: column;
 }
 
 .exercise-title {
+  display: flex;
   font-size: 16px;
   color: #333;
 }
 
+.exercise-title img{
+  width: 15px;
+  margin: 0px 0px 3px 10px;
+}
+
+.exercise-muscles-box {
+  display: flex;
+}
+
 .exercise-muscles {
-  font-size: 14px;
+  font-size: 12px;
   color: #000000;
 }
+
+
+
 
 .exercise-select-btn {
   background-color: #e0e0e0; /* 회색 배경 */
@@ -840,16 +868,17 @@ ul {
 }
 .modal-item {
   position: relative;
-  width: 100px; /* 항목 너비 */
+  width: 40px; /* 항목 너비 */
   text-align: center; /* 텍스트 중앙 정렬 */
 }
 
 .modal-item img {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   object-fit: cover;
 }
+
 
 .modal-item .item-text {
   margin-top: 0.5rem;
@@ -963,7 +992,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .record-header-descript {
@@ -983,6 +1012,7 @@ ul {
   font-size: 1.2rem;
   color: #333;
   cursor: pointer;
+  padding: 0;
 }
 
 .record-sets {
@@ -1006,6 +1036,10 @@ ul {
 
 .gray-text {
   color: #757575;
+}
+
+.gray-text-ae {
+  color: #AEAEAE;
 }
 
 /* 헤더 아이콘 스타일 */
@@ -1289,7 +1323,8 @@ ul {
 
 .default-header-item {
   display: flex;
-  
+  justify-content: space-between;
+  width: 60px;
 }
 .default-header-icon > div {
   padding-left: 10px;
@@ -1318,16 +1353,19 @@ ul {
   display: flex;
 }
 
+:root {
+  --header-height: 60px; /* 헤더 높이 */
+  --footer-height: 50px; /* 푸터 높이 */
+}
+
 .user-container {
   margin-top: 10px;
   padding-left: 5px;
   display: flex;
   flex-direction: column;
-  min-height: 75vh; /* 적절한 높이 설정 */
-  width: 100%; /* 가로 중앙 정렬 유지 */
-  max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
-  overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
-  -ms-overflow-style: none;
+  width: 100%;
+  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
+  overflow-y: auto;
 }
 
 .user-container::-webkit-scrollbar {
@@ -1431,7 +1469,7 @@ ul {
 .user-sort-modal {
   position: absolute;
   right: 20px; /* 화면 오른쪽 */
-  top:100px;
+  top:170px;
   width: 100px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -1513,9 +1551,9 @@ ul {
   padding-left: 5px;
   display: flex;
   flex-direction: column;
-  min-height: 75vh; /* 적절한 높이 설정 */
+  min-height: 70vh; /* 적절한 높이 설정 */
   width: 100%; /* 가로 중앙 정렬 유지 */
-  max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
+  height: calc(75vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
   overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
   -ms-overflow-style: none;
 }
@@ -1705,7 +1743,6 @@ ul {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 2px solid #ddd;
 }
 /* 프로필 이미지 */
 .profile-image2{
@@ -1717,7 +1754,6 @@ ul {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 2px solid #ddd;
 }
 
 
@@ -1736,7 +1772,6 @@ ul {
   flex-direction: column;
   gap: 10px;
   text-align: left; /* 텍스트 왼쪽 정렬 */
-  width: 100%; /* 전체 너비 사용 */
   padding: 0 10px; /* 양쪽 여백 */
 }
 
@@ -1828,11 +1863,14 @@ ul {
 .create-records {
   margin-top: 30px;
 }
-
+:root {
+  --header-height: 60px; /* 헤더 높이 */
+  --footer-height: 50px; /* 푸터 높이 */
+}
 
 .scroll-section {
   min-height: 50vh;
-  max-height: calc(85vh - 120px);
+  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
   overflow-y: auto;
   /* Firefox */
   scrollbar-width: none;
@@ -1901,6 +1939,10 @@ ul {
   font-size: 16px;
   font-weight: bold;
   color: #333;
+}
+
+.details-title{
+  display: flex;
 }
 
 .record-details .set-row {
@@ -2073,6 +2115,7 @@ ul {
 }
 
 .join-title {
+  margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
 }
@@ -2158,7 +2201,6 @@ ul {
   height: 50px;
   border-radius: 50%; /* 동그랗게 */
   object-fit: cover;
-  border: 1px solid #ddd;
 }
 
 /* 프로필 텍스트 (이름, 나이, 키 등) */
@@ -2191,9 +2233,12 @@ ul {
   padding: 10px 10px;
   border-radius: 4px;
   transition: background-color 0.2s;
+  display: flex;
 }
-.edit-btn:hover {
-  background-color: #f0f0f0;
+
+.edit-btn img {
+  width: 12px;
+  margin: 1px 0px;
 }
 
 /* 연결된 트레이너 섹션 */
@@ -2203,13 +2248,6 @@ ul {
   border-radius: 8px;
   padding: 15px 20px;
   margin-bottom: 20px;
-}
-
-/* "연결된 트레이너" 타이틀 */
-.trainer-title {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
 }
 
 /* 트레이너 이름 + 화살표 한 줄 */
@@ -2242,7 +2280,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 20px; /* 두 그룹 간 간격 */
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /* 메뉴 그룹(예: "약관 및 정책" 섹션, "계정" 섹션) */
@@ -2284,7 +2322,7 @@ ul {
   background-color: #fff;
   border: 1px solid #AEAEAE;
   border-radius: 8px;
-  margin: 30px 0px; /* 아래 섹션과 간격 */
+  margin: 20px 0px; /* 아래 섹션과 간격 */
 }
 
 
@@ -2303,6 +2341,8 @@ ul {
 .trainer-title {
   font-size: 12px;
   color: #757575;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 /* 화살표는 줄 가장 오른쪽에 배치 */
@@ -2311,7 +2351,7 @@ ul {
   color: #999;       /* 화살표 색상 */
   font-size: 16 px;   /* 화살표 크기 */
   cursor: pointer;   /* 클릭 가능하게 할 경우 */
-  padding-right: 20px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
 }
@@ -2336,4 +2376,52 @@ ul {
   transform: translateY(-50%);
   color: #999;
   pointer-events: none; /* 단위 텍스트 위에서 마우스 이벤트 차단 */
+}
+
+.default-none-btn {
+  border: none;
+  background: none;
+}
+
+.trainer-name {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* 프로필 이미지 */
+.trainer-re-image{
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center;    /* 수평 가운데 정렬 */
+  justify-content: center;/* 수직 가운데 정렬 */
+  text-align: center;     /* 텍스트 가운데 정렬 */
+}
+.trainer-re-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* 프로필 컨테이너 */
+.trainer-re-container{
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 가운데 정렬 (이미지만) */
+  background-color: #fff;
+  margin: 10px auto;
+  justify-content: center;
+}
+
+.trainer-re-detail {
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }

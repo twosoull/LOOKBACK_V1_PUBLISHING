@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 기록 어플</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- 전체 컨테이너 -->
+  <div class="container">
+    <!-- 일반회원 -->
+    <header class="default-header" style="display: none;">
+      <div class="default-div">
+        <div class="default-title">운동기록</div>
+      </div>
+    </header>
+    <!-- 트레이너일 떄 -->
+    <header class="default-header" style="margin-top: 10px; padding: 0px;">
+        <div class="default-div">
+            <div>
+                <div class="back-btn-box-text">
+                    <div class="default-back-title" style="padding: 0px;">트레이너님의 연결 요청을 수락할 수 없어요.</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="trainer-re-container">
+        <div class="trainer-re-image">
+            <img src="./images/userProfile.jpeg" alt="사용자 이미지">
+            <div class="trainer-name">
+                이영훈 트레이너
+            </div>
+        </div>
+        <div >
+            <p class="trainer-re-detail">이미 김지혜님과 연결된 다른 트레이너님이 있어 요청을 수락할 수 없어요. <br>
+              새로운 트레이너님과 연결하려면, 기존 트레이너님에게 연락하여 연결 해제를 요청해보세요.
+            </p>
+        </div>
+    </div>
+        <!-- 하단 고정 푸터 -->
+        <footer class="fixed-footer-btn">
+            <button class="create-record-btn" onclick="window.location.href='page2.html'">
+              홈으로
+            </button>
+        </footer>
+  </div>
+<script src="/js/common.js"></script>
+<script src="/js/button.js"></script>
+  
+</body>
+</html>
