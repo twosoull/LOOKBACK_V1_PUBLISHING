@@ -193,7 +193,7 @@ ul {
   justify-content: center;
   background-color: #fff; /* 흰 바탕 */
   border: 1px solid #ddd; /* 회색 테두리 */
-  border-radius: 12px; /* 약간 둥근 네모 박스 */
+  border-radius: 5px; /* 약간 둥근 네모 박스 */
   padding: 0.3rem 0.5rem;
   cursor: pointer;
   font-size: 12px; /* 텍스트 크기 축소 */
@@ -462,11 +462,23 @@ ul {
 }
 
 .back-btn {
+  margin-top: 4px;
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0;
+}
+
+.icon-btn-ellypsis{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn-ellypsis img {
+  width: 15px;
+  height: 15px;
 }
 
 .search-container {
@@ -691,6 +703,9 @@ input::placeholder {
   fill: #000;
 }
 
+.sort-btn img {
+  width: 14px;
+}
 .sort-modal {
   position: absolute;
   right: 20px; /* 화면 오른쪽 */
@@ -766,8 +781,8 @@ input::placeholder {
 }
 
 .exercise-image img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -778,9 +793,20 @@ input::placeholder {
 }
 
 .exercise-title {
+  display: flex;
   font-size: 16px;
   color: #333;
 }
+
+.exercise-title img{
+  width: 15px;
+  margin: 0px 0px 3px 10px;
+}
+
+.exercise-muscles-box {
+  display: flex;
+}
+
 
 .exercise-muscles {
   font-size: 14px;
@@ -848,15 +874,16 @@ input::placeholder {
 .save-btn:hover {
   background-color: #333;
 }
+
 .modal-item {
   position: relative;
-  width: 100px; /* 항목 너비 */
+  width: 40px; /* 항목 너비 */
   text-align: center; /* 텍스트 중앙 정렬 */
 }
 
 .modal-item img {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -1303,6 +1330,8 @@ input::placeholder {
 
 .default-header-item {
   display: flex;
+  justify-content: space-between;
+  width: 60px;
   
 }
 .default-header-icon > div {
@@ -1333,16 +1362,19 @@ input::placeholder {
   display: flex;
 }
 
+:root {
+  --header-height: 60px; /* 헤더 높이 */
+  --footer-height: 50px; /* 푸터 높이 */
+}
+
 .user-container {
   margin-top: 10px;
   padding-left: 5px;
   display: flex;
   flex-direction: column;
-  min-height: 75vh; /* 적절한 높이 설정 */
-  width: 100%; /* 가로 중앙 정렬 유지 */
-  max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
-  overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
-  -ms-overflow-style: none;
+  width: 100%;
+  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
+  overflow-y: auto;
 }
 
 .user-container::-webkit-scrollbar {
@@ -1465,6 +1497,14 @@ input::placeholder {
   font-size: 14px;
 }
 
+.margin-top-30 {
+  margin-top : 60px;
+}
+
+.margin-top-20 {
+  margin-top : 20px;
+}
+
 /* 카카오톡 초대 버튼 */
 .kakao-invite-btn {
   display: block;
@@ -1515,14 +1555,13 @@ input::placeholder {
   border: none;
 }
 
-
 .record-container {
   padding-left: 5px;
   display: flex;
   flex-direction: column;
-  min-height: 75vh; /* 적절한 높이 설정 */
+  min-height: 70vh; /* 적절한 높이 설정 */
   width: 100%; /* 가로 중앙 정렬 유지 */
-  max-height: calc(100vh - 120px); /* 🔥 푸터를 제외한 높이 설정 */
+  height: calc(75vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
   overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
   -ms-overflow-style: none;
 }
@@ -1843,7 +1882,7 @@ input::placeholder {
 
 .scroll-section {
   min-height: 50vh;
-  max-height: calc(85vh - 120px);
+  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
   overflow-y: auto;
   /* Firefox */
   scrollbar-width: none;
@@ -1857,7 +1896,7 @@ input::placeholder {
 
 .scroll-section-mid {
   min-height: 50vh;
-  max-height: calc(80vh - 120px);
+  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
   overflow-y: auto;
   /* Firefox */
   scrollbar-width: none;
@@ -1927,6 +1966,10 @@ input::placeholder {
   font-size: 16px;
   font-weight: bold;
   color: #333;
+}
+
+.details-title{
+  display: flex;
 }
 
 .record-details .set-row {
@@ -2099,6 +2142,7 @@ input::placeholder {
 }
 
 .join-title {
+  margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
 }
@@ -2235,6 +2279,29 @@ input::placeholder {
   border-radius: 4px;
   transition: background-color 0.2s;
 }
+/* 수정하기 버튼 */
+.edit-btn2 {
+  display: flex;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+
+.edit-btn img {
+  width: 12px;
+  margin: 1px 0px;
+}
+
+.edit-btn2 img {
+  width: 12px;
+  margin: 1px 0px;
+}
 
 .edit-btn-before {
   background: #757575;
@@ -2298,7 +2365,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   gap: 20px; /* 두 그룹 간 간격 */
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /* 메뉴 그룹(예: "약관 및 정책" 섹션, "계정" 섹션) */
@@ -2428,6 +2495,10 @@ input::placeholder {
   pointer-events: none; /* 단위 텍스트 위에서 마우스 이벤트 차단 */
 }
 
+.default-none-btn {
+  border: none;
+  background: none;
+}
 
 .basic-description {
   margin: 40px 0px 0px 0px;
@@ -2459,8 +2530,18 @@ input::placeholder {
 }
 .basic-description-detail-box {
   margin-top: 15px;
-  display: flex;
 }
+
+.basic-description-detail-box2 {
+  display: flex;
+  margin-top: 15px;
+}
+
+.basic-description-detail-box2 img{
+  width: 15px;
+  margin: 12px 12px 0px 0px;
+}
+
 
 .profile-box {
   margin-top: 15px;
@@ -2578,7 +2659,7 @@ textarea:focus::placeholder {
 
 
 #file-name {
-  width: 70%;
+  width: 75%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -2764,3 +2845,48 @@ textarea:focus::placeholder {
 .no-mrg {
   margin: 0px;
 }
+
+
+.trainer-name {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* 프로필 이미지 */
+.trainer-re-image{
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center;    /* 수평 가운데 정렬 */
+  justify-content: center;/* 수직 가운데 정렬 */
+  text-align: center;     /* 텍스트 가운데 정렬 */
+}
+.trainer-re-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* 프로필 컨테이너 */
+.trainer-re-container{
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 가운데 정렬 (이미지만) */
+  background-color: #fff;
+  margin: 10px auto;
+  justify-content: center;
+}
+
+.trainer-re-detail {
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
