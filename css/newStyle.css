@@ -1,18 +1,18 @@
 /* 공통 스타일 */
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-body {
-  font-family: Pretendard-Regular;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #fff; /* 흰색 배경 */
-  color: #000000; /* 기본 텍스트 색상 */
-}
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  body {
+    font-family: Pretendard-Regular;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff; /* 흰색 배경 */
+    color: #000000; /* 기본 텍스트 색상 */
+  }
 
 p {
   margin: 5px;
@@ -502,10 +502,6 @@ ul {
   color: #AEAEAE; /* 플레이스홀더 색상 */
 }
 
-input::placeholder {
-  color: #AEAEAE; /* 플레이스홀더 색상 */
-}
-
 .search-btn {
   background: none;
   border: none;
@@ -706,6 +702,7 @@ input::placeholder {
 .sort-btn img {
   width: 14px;
 }
+
 .sort-modal {
   position: absolute;
   right: 20px; /* 화면 오른쪽 */
@@ -786,7 +783,6 @@ input::placeholder {
   border-radius: 8px;
   object-fit: cover;
 }
-
 .exercise-text {
   display: flex;
   flex-direction: column;
@@ -807,11 +803,13 @@ input::placeholder {
   display: flex;
 }
 
-
 .exercise-muscles {
-  font-size: 14px;
+  font-size: 12px;
   color: #000000;
 }
+
+
+
 
 .exercise-select-btn {
   background-color: #e0e0e0; /* 회색 배경 */
@@ -874,7 +872,6 @@ input::placeholder {
 .save-btn:hover {
   background-color: #333;
 }
-
 .modal-item {
   position: relative;
   width: 40px; /* 항목 너비 */
@@ -887,6 +884,7 @@ input::placeholder {
   border-radius: 8px;
   object-fit: cover;
 }
+
 
 .modal-item .item-text {
   margin-top: 0.5rem;
@@ -1000,7 +998,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .record-header-descript {
@@ -1020,6 +1018,7 @@ input::placeholder {
   font-size: 1.2rem;
   color: #333;
   cursor: pointer;
+  padding: 0;
 }
 
 .record-sets {
@@ -1045,7 +1044,7 @@ input::placeholder {
   color: #757575;
 }
 
-.gray-text-row {
+.gray-text-ae {
   color: #AEAEAE;
 }
 
@@ -1332,7 +1331,6 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   width: 60px;
-  
 }
 .default-header-icon > div {
   padding-left: 10px;
@@ -1346,7 +1344,6 @@ input::placeholder {
 .default-back-title {
   font-size: 16px;
   font-weight: bold;
-  color: #000000;
   padding: 0.8rem;
 }
 
@@ -1478,7 +1475,7 @@ input::placeholder {
 .user-sort-modal {
   position: absolute;
   right: 20px; /* 화면 오른쪽 */
-  top:100px;
+  top:170px;
   width: 100px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -1554,6 +1551,7 @@ input::placeholder {
 .border-none {
   border: none;
 }
+
 
 .record-container {
   padding-left: 5px;
@@ -1751,7 +1749,6 @@ input::placeholder {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 2px solid #ddd;
 }
 /* 프로필 이미지 */
 .profile-image2{
@@ -1763,7 +1760,6 @@ input::placeholder {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 2px solid #ddd;
 }
 
 
@@ -1782,7 +1778,6 @@ input::placeholder {
   flex-direction: column;
   gap: 10px;
   text-align: left; /* 텍스트 왼쪽 정렬 */
-  width: 100%; /* 전체 너비 사용 */
   padding: 0 10px; /* 양쪽 여백 */
 }
 
@@ -1841,10 +1836,6 @@ input::placeholder {
 .font-14 {
   font-size: 14px;
 }
-
-.font-16 {
-  font-size: 16px;
-}
 /* 네모 박스 스타일 */
 .record-sets-feedback-command {
   background-color: #EAEAEA;
@@ -1878,7 +1869,10 @@ input::placeholder {
 .create-records {
   margin-top: 30px;
 }
-
+:root {
+  --header-height: 60px; /* 헤더 높이 */
+  --footer-height: 50px; /* 푸터 높이 */
+}
 
 .scroll-section {
   min-height: 50vh;
@@ -1894,20 +1888,6 @@ input::placeholder {
   display: none; /* Chrome, Safari, Opera */
 }
 
-.scroll-section-mid {
-  min-height: 50vh;
-  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
-  overflow-y: auto;
-  /* Firefox */
-  scrollbar-width: none;
-  /* IE, Edge */
-  -ms-overflow-style: none;
-}
-
-.scroll-section-mid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
 .bottom-30 {
   margin-bottom: 30px;
 }
@@ -1916,8 +1896,7 @@ input::placeholder {
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
-  color: #000000;
-  font-weight: bold;
+  color: #333;
 }
 
 .record-section input {
@@ -2117,7 +2096,7 @@ input::placeholder {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .main-h1 {
@@ -2146,12 +2125,6 @@ input::placeholder {
   font-size: 22px;
   font-weight: bold;
 }
-
-.join-title-sub{
-  font-size: 14px;
-  font-weight: bold;
-}
-
 
 /* 두 개의 박스를 가로로 나란히 배치하고, 공간을 균등 분배 */
 .user-type-container {
@@ -2202,7 +2175,6 @@ input::placeholder {
 .profile-top-row {
   align-items: center;
   justify-content: space-between; /* 왼쪽: 프로필, 오른쪽: 버튼 */
-  border-radius: 8px;
 }
 
 /* 상단 행(프로필 사진 + 이름 + 화살표) */
@@ -2220,16 +2192,6 @@ input::placeholder {
   padding: 20px;
 }
 
-/* 왼쪽 영역: 프로필 이미지 + 텍스트 묶음 */
-.trainer-profile-left {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 20px;
-}
-
-
 
 /* 왼쪽 영역(프로필 사진 + 텍스트) */
 .card-left {
@@ -2245,7 +2207,6 @@ input::placeholder {
   height: 50px;
   border-radius: 50%; /* 동그랗게 */
   object-fit: cover;
-  border: 1px solid #ddd;
 }
 
 /* 프로필 텍스트 (이름, 나이, 키 등) */
@@ -2278,45 +2239,12 @@ input::placeholder {
   padding: 10px 10px;
   border-radius: 4px;
   transition: background-color 0.2s;
-}
-/* 수정하기 버튼 */
-.edit-btn2 {
   display: flex;
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 12px;
-  cursor: pointer;
-  padding: 10px 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
 }
-
 
 .edit-btn img {
   width: 12px;
   margin: 1px 0px;
-}
-
-.edit-btn2 img {
-  width: 12px;
-  margin: 1px 0px;
-}
-
-.edit-btn-before {
-  background: #757575;
-  border: none;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 10px 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.edit-btn:hover {
-  background-color: #f0f0f0;
 }
 
 /* 연결된 트레이너 섹션 */
@@ -2326,13 +2254,6 @@ input::placeholder {
   border-radius: 8px;
   padding: 15px 20px;
   margin-bottom: 20px;
-}
-
-/* "연결된 트레이너" 타이틀 */
-.trainer-title {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
 }
 
 /* 트레이너 이름 + 화살표 한 줄 */
@@ -2398,16 +2319,8 @@ input::placeholder {
 .profile-bottom {
   border-top: 1px solid #eee;
   justify-content: center;
-  display: flex;
-}
-
-.profile-bottom-before {
-  border-top: 1px solid #AEAEAE;
-  justify-content: center;
-  display: flex;
-  background-color: #757575;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+  display: flex
+;
 }
 
 /* 마이페이지 최상위 섹션 (배경, 여백 등) */
@@ -2415,7 +2328,7 @@ input::placeholder {
   background-color: #fff;
   border: 1px solid #AEAEAE;
   border-radius: 8px;
-  margin: 30px 0px; /* 아래 섹션과 간격 */
+  margin: 20px 0px; /* 아래 섹션과 간격 */
 }
 
 
@@ -2431,44 +2344,20 @@ input::placeholder {
   padding: 10px 20px;
   margin-bottom: 20px;
 }
-
-.trainer-profile-card {
-  margin-top:20px;
-  background-color: #fff;
-  border: 1px solid #AEAEAE;
-  border-radius: 8px;
-  padding: 10px 10px;
-  margin-bottom: 20px;
-}
-
-.trainer-profile-card-item {
-  margin-top:10px;
-  background-color: #fff;
-  border: 1px solid #AEAEAE;
-  border-radius: 8px;
-  padding: 10px 10px;
-}
-
-.trainer-profile-card-item-container {
-  margin-top: 20px;
-}
-
 .trainer-title {
   font-size: 12px;
   color: #757575;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
-.trainer-profile-item {
-  display: flex;
-  justify-content: space-between;
-}
 /* 화살표는 줄 가장 오른쪽에 배치 */
 .profile-arrow {
   margin-left: auto; /* 왼쪽 요소를 밀어내고 오른쪽 끝으로 */
   color: #999;       /* 화살표 색상 */
   font-size: 16 px;   /* 화살표 크기 */
   cursor: pointer;   /* 클릭 가능하게 할 경우 */
-  padding-right: 20px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
 }
@@ -2499,353 +2388,6 @@ input::placeholder {
   border: none;
   background: none;
 }
-
-.basic-description {
-  margin: 40px 0px 0px 0px;
-}
-
-
-.basic-description-mid-title {
-  margin: 10px 0px 0px 0px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 22px;
-}
-
-.basic-description-detail {
-  margin: 10px 0px 0px 0px;
-  font-size: 14px;
-  line-height: 22px;
-  width: 100%;
-}
-.basic-description-detail-no-mrg {
-  margin: 10px 0px 0px 0px;
-  font-size: 12px;
-  line-height: 22px;
-}
-.profile-description-detail {
-  margin: 0px;
-  font-size: 14px;
-  line-height: 22px;
-}
-.basic-description-detail-box {
-  margin-top: 15px;
-}
-
-.basic-description-detail-box2 {
-  display: flex;
-  margin-top: 15px;
-}
-
-.basic-description-detail-box2 img{
-  width: 15px;
-  margin: 12px 12px 0px 0px;
-}
-
-
-.profile-box {
-  margin-top: 15px;
-}
-
-.basic-description-detail-content {
-  margin: 0px;
-  font-size: 12px;
-  line-height: 22px; 
-}
-
-.card-next {
-  margin-right: 20px;
-}
-
-.basic-textarea {
-  width: 93%;
-  min-height: 100px; /* 최소 높이 */
-  max-height: 300px; /* 최대 높이 설정 가능 (원하는 크기로 조정) */
-  height: auto;
-  overflow: hidden;
-  resize: none; /* 사용자가 수동으로 크기 조절 못 하게 */
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  padding: 12px;
-}
-
-/* placeholder 스타일 조정 */
-textarea::placeholder {
-  color: #aaa; /* 부드러운 회색 */
-  font-size: 14px;
-  font-style: Pretendard-Regular;
-  opacity: 1; /* 기본적으로 흐려지는 걸 방지 */
-  transition: all 0.3s ease;
-  padding: 12px;
-  font-weight: 400px;
-}
-
-/* 사용자가 입력을 시작하면 placeholder가 자연스럽게 사라지도록 */
-textarea:focus::placeholder {
-  opacity: 0.5;
-  transform: translateY(-4px);
-}
-
-.basic-description-with-plus {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn-default {
-  all: unset; /* 모든 기본 스타일 제거 */
-  display: inline-block; /* 기본적인 버튼 레이아웃을 유지 */
-  font-size: 16px;
-}
-
-.valid {
-  color: #D65108;
-}
-
-
-.text-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.text-section {
-  width: 48%;  /* Adjusting width to allow some space between sections */
-}
-
-.text-section input {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-.text-section label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 12px;
-  color: #333;
-  font-weight: bold;
-}
-
-.left {
-  text-align: left;  /* Ensure input is aligned to the left */
-}
-
-.right {
-  text-align: right;  /* Ensure input is aligned to the right */
-}
-
-.photo-upload-btn {
-  width:100%;
-  background-color: #fff;  /* Light gray background */
-  color: #000000;                 /* Dark gray text */
-  font-size: 14px;
-  font-weight:400px;
-  padding: 10px 20px;
-  border: 0.5px solid #000000;      /* Light border */
-  border-radius: 4px;          /* Rounded corners */
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s; /* Smooth color transition */
-}
-
-.photo-upload-btn:focus {
-  outline: none;               /* Remove default focus outline */
-  border-color: #ccc;          /* Highlight border on focus */
-}
-
-
-#file-name {
-  width: 75%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-.file-change-btn {
-  padding: 10px 20px;
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.file-change-btn:hover {
-  background-color: #e0e0e0;
-  color: #000;
-}
-
-.file-change-btn:focus {
-  outline: none;
-  border-color: #ccc;
-}
-
-.checkbox-section {
-  font-size: 14px;
-}
-
-.checkbox-section label {
-  margin-right: 10px;
-}
-
-.checkbox-section input[type="checkbox"] {
-  cursor: pointer;
-  border-color: #ddd;
-}
-
-.select-section {
-  margin-top: 20px;
-}
-
-.select-section label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.custom-dropdown {
-  position: relative;
-  width: 100%;
-}
-
-.dropdown-selected {
-  padding: 12px;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  font-size: 14px;
-  background-color: #fff;
-  color: #000000;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dropdown-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  display: none;
-  z-index: 10;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-option {
-  padding: 12px;
-  font-size: 14px;
-  cursor: pointer;
-  color: #333;
-  transition: background-color 0.2s;
-}
-
-.dropdown-option:hover {
-  background-color: #f0f0f0;
-}
-
-.custom-dropdown.open .dropdown-options {
-  display: block;
-}
-
-.custom-dropdown.open .dropdown-selected {
-  border-color: #000000;
-}
-
-.custom-dropdown .dropdown-selected::after {
-  content: '▼';
-  font-size: 14px;
-  color: #000000;
-}
-
-
-.font-12 {
-  font-size: 12px;
-}
-
-.font-14 {
-  font-size: 14px;
-}
-
-.font-16 {
-  font-size: 16px;
-}
-
-.margin-top-60 {
-  margin-top : 60px;
-}
-
-.margin-top-30 {
-  margin-top : 60px;
-}
-
-.margin-top-20 {
-  margin-top : 20px;
-}
-/* 체크박스 섹션 스타일 */
-.checkbox-section-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: left;
-}
-
-.create-record-btn-with {
-  display: block;
-  width: 90%;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  text-align: center;
-  cursor: pointer;
-  
-}
-
-.fixed-footer-btn-2 {
-  width: 100%;
-  background: #fff;
-  display: flex;
-  padding: 30px 0;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: normal;
-  text-align: center;
-  z-index: 100;
-  height: 50px; /* 푸터 높이 지정 */
-}
-
-
-.fixed-footer-btn-with {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  padding: 30px 0;
-  font-size: 16px;
-  font-weight: normal;
-  text-align: center;
-  z-index: 100;
-  height: 100px; /* 푸터 높이 지정 */
-}
-
-.no-mrg {
-  margin: 0px;
-}
-
 
 .trainer-name {
   font-size: 20px;
