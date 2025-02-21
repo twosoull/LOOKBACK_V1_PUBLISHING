@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수업기록 추가 - 1</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/excerciseRecordCreate.css">
+</head>
+<body>
+  <div class="record-add-container">
+    <header class="default-header">
+      <div class="default-div">
+          <div>
+              <div class="back-btn-box-text">
+                  <button class="back-btn">&lt;</button>
+                  <div class="default-back-title">소속</div>
+              </div>
+          </div>
+      </div>
+    </header>
+
+  <div class="create-records">
+    <!-- 텍스트 입력 -->
+    <div class="record-section bottom-30">
+      <label for="record-date">소속 센터명 <span class="valid">*</span></label>
+      <input type="text" id="record-display"
+      placeholder="소속된 헬스장, PT샵 또는 센터의 이름을 입력해주세요" />
+   </div>
+
+    <!-- 텍스트 입력 -->
+    <div class="record-section bottom-30">
+      <label for="record-date">지점명 <span class="valid">*</span></label>
+      <input type="text" id="record-display"
+      placeholder="소속된 센터의 지점명을 입력해주세요." />
+    </div>
+    <!-- 체크박스 -->
+    <div class="checkbox-section">
+      <input class="gray-text" type="checkbox" id="re-enroll" />
+      <label class="gray-text" for="re-enroll">소속 비공개</label>
+    </div>
+  </div>
+  </div>
+  
+    <!-- 하단 고정 푸터 -->
+  <footer class="fixed-footer-btn">
+      <button class="create-record-btn" onclick="window.location.href='page2.html'">
+        저장
+      </button>
+  </footer>
+</div>
+
+
+</body>
+<script src="/js/common.js"></script>
+<script>
+  function updateFileName() {
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('file-name');
+    
+    const fileName = fileInput.files[0] ? fileInput.files[0].name : '';
+    fileNameDisplay.value = fileName;
+  }
+</script>
+</html>

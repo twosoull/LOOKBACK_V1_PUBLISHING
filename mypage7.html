@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수업기록 추가 - 1</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/excerciseRecordCreate.css">
+</head>
+<body>
+  <div class="record-add-container">
+    <header class="default-header">
+      <div class="default-div">
+          <div>
+              <div class="back-btn-box-text">
+                  <button class="back-btn">&lt;</button>
+                  <div class="default-back-title">트레이너 정보</div>
+              </div>
+          </div>
+      </div>
+    </header>
+  <div class="profile-left">
+      <div class="profile-photo">
+      <!-- 실제 프로필 이미지로 교체 -->
+      <img src="/images/1.png" alt="사용자 이미지">
+      </div>
+      <div class="profile-text">
+      <div class="profile-name">이영훈</div>
+      <div class="profile-stats">26세 | 남자 | 010-2725-7785</div>
+      </div>
+  </div>
+  <!-- 자기소개 -->
+  <section class="basic-description">
+    <div class="bold">자기소개</div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        간단한 소개 메시지 입니다. 간단한 소개 메시지 입니다. 간단한 소개 메시지 입니다. 간단한 소개 메시지 입니다.
+      </p>
+    </div>
+  </section>
+  <!-- 자기소개 -->
+  <section class="basic-description">
+    <div class="bold">학력</div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        서울대학교 체육대학
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2013.03 ~ 2019.02
+      </p>
+    </div>
+  </section>
+  <!-- 자기소개 -->
+  <section class="basic-description">
+    <div class="bold">학력</div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        가나다 피트니스 강남점
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2017.03 ~ 현재
+      </p>
+    </div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        ABC KOREA 심사위원
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2013.03 ~ 2019.02
+      </p>
+    </div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        개인 PT샵 트레이너
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2019.01 ~ 2021.06
+      </p>
+    </div>
+  </section>
+  <!-- 자기소개 -->
+  <section class="basic-description">
+    <div class="bold">교육 & 수료</div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        교육명
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2024.01
+      </p>
+    </div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        교육명
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2024.01
+      </p>
+    </div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        교육명
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2024.01
+      </p>
+    </div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        교육명
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2024.01
+      </p>
+    </div>
+  </section>
+
+  <!-- 자기소개 -->
+  <section class="basic-description">
+    <div class="bold">수상</div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        *** 대회 1위
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2024.01
+      </p>
+    </div>
+    <div class="basic-description-detail-box">
+      <p class="basic-description-detail">
+        *** 대회 3위
+      </p>
+      <p class="basic-description-detail-content gray-text">
+        2024.01
+      </p>
+    </div>
+  </section>
+
+    <!-- 자기소개 -->
+    <section class="basic-description">
+      <div class="bold">소속</div>
+      <div class="basic-description-detail-box">
+        <p class="basic-description-detail">
+          가나다 피트니스 강남점
+        </p>
+      </div>
+    </section>
+
+</div>
+
+
+</body>
+<script src="/js/common.js"></script>
+<script>
+  // 모든 박스에 대해 클릭 이벤트를 등록
+  document.querySelectorAll('.user-type-box').forEach(box => {
+    box.addEventListener('click', () => {
+      // 우선 모든 박스에서 active 클래스를 제거
+      document.querySelectorAll('.user-type-box')
+              .forEach(b => b.classList.remove('active'));
+      // 클릭한 박스에만 active 클래스 부여
+      box.classList.add('active');
+    });
+  });
+</script>
+</html>
