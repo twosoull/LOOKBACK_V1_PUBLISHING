@@ -26,14 +26,14 @@
     <div class="record-section bottom-30">
       <label for="record-date">교육 및 수료증명 <span class="valid">*</span></label>
       <input type="text" id="record-display"
-      placeholder="경력명을 입력해주세요." />
+      placeholder="교육 및 수료증명을 입력해주세요." />
    </div>
 
     <!-- 텍스트 입력 -->
     <div class="record-section bottom-30">
-      <label for="record-date">수료시 <span class="valid">*</span></label>
+      <label for="record-date">수료시기 <span class="valid">*</span></label>
       <input type="text" id="record-display"
-      placeholder="취득연월" />
+      placeholder="수료연월" />
     </div>
       
     <!-- 텍스트 입력 -->
@@ -46,7 +46,7 @@
       <label for="certificate-image">수료증 이미지 <span class="valid">*</span></label>
       <div class="file-input-container">
         <input type="text" id="file-name" placeholder="image_title.jpg" readonly />
-        <button type="button" class="file-change-btn" onclick="document.getElementById('file-upload').click()">변경</button>
+        <span class="file-change-text" onclick="document.getElementById('file-upload').click()">변경</span>
         <input type="file" id="file-upload" style="display: none;" onchange="updateFileName()" />
       </div>
     </div>
@@ -63,7 +63,7 @@
 
 
 </body>
-<script src="/js/common.js"></script>
+<script src="./js/common.js"></script>
 <script>
   function updateFileName() {
     const fileInput = document.getElementById('file-upload');

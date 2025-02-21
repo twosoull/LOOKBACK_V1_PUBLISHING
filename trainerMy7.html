@@ -46,7 +46,7 @@
       <label for="certificate-image">이미지</label>
       <div class="file-input-container">
         <input type="text" id="file-name" placeholder="image_title.jpg" readonly />
-        <button type="button" class="file-change-btn" onclick="document.getElementById('file-upload').click()">변경</button>
+        <span class="file-change-text" onclick="document.getElementById('file-upload').click()">변경</span>
         <input type="file" id="file-upload" style="display: none;" onchange="updateFileName()" />
       </div>
     </div>
@@ -63,7 +63,7 @@
 
 
 </body>
-<script src="/js/common.js"></script>
+<script src="./js/common.js"></script>
 <script>
   function updateFileName() {
     const fileInput = document.getElementById('file-upload');

@@ -24,9 +24,9 @@
   <div class="create-records">
     <!-- 텍스트 입력 -->
     <div class="record-section bottom-30">
-      <label for="record-date">경력명 <span class="valid">*</span></label>
+      <label for="record-date">자격증명 <span class="valid">*</span></label>
       <input type="text" id="record-display"
-      placeholder="경력명을 입력해주세요." />
+      placeholder="자격증명을 입력해주세요." />
    </div>
 
     <!-- 텍스트 입력 -->
@@ -42,11 +42,11 @@
       <button class="photo-upload-btn" type="button">+사진첨부</button>
     </div>
 
-    <div class="record-section bottom-30" style="width: 107%">
+    <div class="record-section bottom-30">
       <label for="certificate-image">자격증 이미지 <span class="valid">*</span></label>
       <div class="file-input-container">
         <input type="text" id="file-name" placeholder="image_title.jpg" readonly />
-        <button type="button" class="file-change-btn" onclick="document.getElementById('file-upload').click()">변경</button>
+        <span class="file-change-text" onclick="document.getElementById('file-upload').click()">변경</span>
         <input type="file" id="file-upload" style="display: none;" onchange="updateFileName()" />
       </div>
     </div>
@@ -63,7 +63,7 @@
 
 
 </body>
-<script src="/js/common.js"></script>
+<script src="./js/common.js"></script>
 <script>
   function updateFileName() {
     const fileInput = document.getElementById('file-upload');

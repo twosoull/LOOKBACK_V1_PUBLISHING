@@ -66,7 +66,7 @@
           </div>
         </div> 
       </div>
-      <section class="basic-description no-mrg">
+      <section class="basic-description no-mrg isShow" style="display: none;">
         <div class="basic-description-detail-box">
           <p class="basic-description-detail">
             <textarea class="basic-textarea" placeholder="어떤 점이 불편하셨나요? 소중한 의견을 담아 더 나은 서비스로 돌아올게요."></textarea>
@@ -87,8 +87,8 @@
     </footer>
 
   </div>
-  <script src="/js/common.js"></script>
-  <script src="/js/button.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/button.js"></script>
   <script>
     // 모든 박스에 대해 클릭 이벤트를 등록
     document.querySelectorAll('.user-type-box').forEach(box => {
@@ -113,6 +113,33 @@ document.querySelectorAll('.dropdown-option').forEach(function (option) {
     document.querySelector('.custom-dropdown').classList.remove('open');
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+      const dropdown = document.getElementById('custom-dropdown');
+      const dropdownSelected = document.getElementById('dropdown-selected');
+      const dropdownOptions = document.getElementById('dropdown-options');
+      const options = dropdownOptions.querySelectorAll('.dropdown-option');
+      const isShow = document.querySelector('.isShow');
+
+
+      // 각 옵션 클릭 이벤트 처리
+      options.forEach(option => {
+        option.addEventListener('click', function() {
+          const selectedValue = option.getAttribute('data-value');
+          dropdownSelected.textContent = option.textContent;
+
+          // 데이터 값이 '6'(기타)인 경우에만 추가 섹션 보이기
+          if (selectedValue === '6') {
+            isShow.style.display = 'block';
+          } else {
+            isShow.style.display = 'none';
+          }
+        });
+      });
+
+    });
+
+
 
   </script>
 </body>

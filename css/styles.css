@@ -5,6 +5,33 @@
   font-weight: 400;
   font-style: normal;
 }
+
+/* Chrome, Safari, Opera */
+::-webkit-input-placeholder {
+  font-family: Pretendard-Regular;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  font-family: Pretendard-Regular;
+}
+
+/* Firefox 4 - 18 */
+:-moz-placeholder {
+  font-family: Pretendard-Regular;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+  font-family: Pretendard-Regular;
+}
+
+/* 표준 문법 */
+::placeholder {
+  font-family: Pretendard-Regular;
+}
+
+
 body {
   font-family: Pretendard-Regular;
   margin: 0;
@@ -1311,6 +1338,7 @@ input::placeholder {
 
 .record-section-small-header {
   margin-bottom: 40px;
+  display: flex;
 }
 
 /*회원관리*/
@@ -1331,7 +1359,7 @@ input::placeholder {
 .default-header-item {
   display: flex;
   justify-content: space-between;
-  width: 60px;
+  width: 25px;
   
 }
 .default-header-icon > div {
@@ -1373,7 +1401,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
+  height: calc(95vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
   overflow-y: auto;
 }
 
@@ -1559,11 +1587,7 @@ input::placeholder {
   padding-left: 5px;
   display: flex;
   flex-direction: column;
-  min-height: 70vh; /* 적절한 높이 설정 */
-  width: 100%; /* 가로 중앙 정렬 유지 */
-  height: calc(75vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
-  overflow-y: auto; /* 🔥 내부에서 스크롤 허용 */
-  -ms-overflow-style: none;
+  padding-bottom: 20px;
 }
 
 .record-container::-webkit-scrollbar {
@@ -1577,7 +1601,7 @@ input::placeholder {
 }
 
 .record-item {
-  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .record-info{
   display: flex;
@@ -1661,6 +1685,7 @@ input::placeholder {
   max-width: 600px;
   margin: 20px auto;
   padding: 0 20px;
+  margin-bottom:150px;
 }
 /* 푸터 메뉴 스타일 */
 .footer-item {
@@ -1757,7 +1782,7 @@ input::placeholder {
 .profile-image2{
   margin: 60px 0px;
 }
-.profile-image2 img {
+.profile-image2 .main-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -1896,7 +1921,8 @@ input::placeholder {
 
 .scroll-section-mid {
   min-height: 50vh;
-  height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
+  /*height: calc(85vh - var(--header-height) - var(--footer-height) - 10px); /* 10px은 추가 여백 */
+  
   overflow-y: auto;
   /* Firefox */
   scrollbar-width: none;
@@ -2120,6 +2146,10 @@ input::placeholder {
   font-weight: 700;
 }
 
+.bold-700{
+  font-weight: bold;
+}
+
 .main-h1 {
       font-size: 100px;
       color: #000;
@@ -2221,6 +2251,14 @@ input::placeholder {
 }
 
 /* 왼쪽 영역: 프로필 이미지 + 텍스트 묶음 */
+.profile-left2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* 왼쪽 영역: 프로필 이미지 + 텍스트 묶음 */
 .trainer-profile-left {
   display: flex;
   align-items: center;
@@ -2246,6 +2284,7 @@ input::placeholder {
   border-radius: 50%; /* 동그랗게 */
   object-fit: cover;
   border: 1px solid #ddd;
+  margin-right: 10px;
 }
 
 /* 프로필 텍스트 (이름, 나이, 키 등) */
@@ -2259,7 +2298,7 @@ input::placeholder {
 .profile-name {
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: #000000;
 }
 
 /* 나이/성별/키/몸무게 등 */
@@ -2287,7 +2326,7 @@ input::placeholder {
   color: #333;
   font-size: 12px;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 14px 14px;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
@@ -2396,7 +2435,7 @@ input::placeholder {
 }
 
 .profile-bottom {
-  border-top: 1px solid #eee;
+  border-top: 1px solid #AEAEAE;
   justify-content: center;
   display: flex;
 }
@@ -2534,12 +2573,12 @@ input::placeholder {
 
 .basic-description-detail-box2 {
   display: flex;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .basic-description-detail-box2 img{
   width: 15px;
-  margin: 12px 12px 0px 0px;
+  margin: 13px 12px 0px 0px;
 }
 
 
@@ -2568,7 +2607,7 @@ input::placeholder {
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
-  padding: 12px;
+  padding: 10px;
 }
 
 /* placeholder 스타일 조정 */
@@ -2578,7 +2617,7 @@ textarea::placeholder {
   font-style: Pretendard-Regular;
   opacity: 1; /* 기본적으로 흐려지는 걸 방지 */
   transition: all 0.3s ease;
-  padding: 12px;
+  padding: 12px 10px;
   font-weight: 400px;
 }
 
@@ -2657,25 +2696,30 @@ textarea:focus::placeholder {
   border-color: #ccc;          /* Highlight border on focus */
 }
 
-
 #file-name {
-  width: 75%;
-  padding: 10px;
+  width: 100%;
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   box-sizing: border-box;
 }
+.file-input-container {
+  position: relative;
+}
 
-.file-change-btn {
-  padding: 10px 20px;
-  background-color: #f0f0f0;
-  color: #333;
+
+/* 오른쪽에 오버레이되는 "변경" 텍스트 */
+.file-change-text {
+  position: absolute;
+  margin-right: 10px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  color: #000000; /* 원하는 색상으로 변경 가능 */
+  text-decoration: underline;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
 }
 
 .file-change-btn:hover {
@@ -2764,9 +2808,12 @@ textarea:focus::placeholder {
 }
 
 .custom-dropdown .dropdown-selected::after {
-  content: '▼';
-  font-size: 14px;
-  color: #000000;
+  content: "";
+  display: inline-block;
+  width: 20px; /* 아이콘 너비에 맞게 조정 */
+  height: 20px; /* 아이콘 높이에 맞게 조정 */
+  background: url('../icons/chevron-down.svg') no-repeat center center;
+  background-size: contain;
 }
 
 
@@ -2890,3 +2937,41 @@ textarea:focus::placeholder {
   unicode-bidi: isolate;
 }
 
+.record-descript div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-title-detail-icon img {
+  width: 18px;
+}
+
+.record-title-detail-icon {
+}
+
+/* 이미지 컨테이너를 relative로 설정하면 내부 absolute 요소의 기준이 됩니다 */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+/* 메인 이미지는 블록으로 표시합니다 */
+.image-container img.main-image {
+  display: block;
+}
+/* 아이콘은 절대 위치를 사용하여 오른쪽 아래에 배치 */
+.icon-overlay {
+  position: absolute;
+  bottom: 15px;  /* 아래쪽 여백 (원하는 값으로 조정) */
+  right: 10px;   /* 오른쪽 여백 (원하는 값으로 조정) */
+  width: 24px;  /* 아이콘 너비 (필요에 따라 조정) */
+  height: 24px; /* 아이콘 높이 (필요에 따라 조정) */
+}
+
+.camera-with {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+}
